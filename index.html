@@ -129,9 +129,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, 
-                rgba(15, 5, 25, 0.7) 0%, 
-                rgba(91, 33, 182, 0.5) 50%, 
+            background: linear-gradient(135deg,
+                rgba(15, 5, 25, 0.7) 0%,
+                rgba(91, 33, 182, 0.5) 50%,
                 rgba(15, 5, 25, 0.7) 100%);
             z-index: 0;
         }
@@ -345,10 +345,10 @@
         }
 
         /* ===== ABOUT SECTION ===== */
-       	#sobre-mi {
-    	background: url('https://smarttradingsystems.net/imagen/FondoSobreMi.png') center center / cover no-repeat;
-   	 padding: 70px 0;
-	}
+        #sobre-mi {
+            background: url('https://smarttradingsystems.net/imagen/FondoSobreMi.png') center center / cover no-repeat;
+            padding: 70px 0;
+        }
 
         #sobre-mi::before {
             content: '';
@@ -389,10 +389,10 @@
 
         /* ===== HOLOGRAPHIC SCENE ===== */
         .holo-scene {
-    	position: relative;
-    	min-height: 720px;
-    	margin-top: 1rem;
-	}
+            position: relative;
+            min-height: 720px;
+            margin-top: 1rem;
+        }
 
         .holo-scene::before {
             content: '';
@@ -605,6 +605,7 @@
         .win-3 { top: 3%; right: 3%; animation-delay: 0.6s; }
         .win-4 { top: 40%; right: 1%; animation-delay: 1.8s; }
         .win-5 { bottom: 4%; right: 6%; animation-delay: 2.4s; }
+        .win-6 { top: 40%; left: 1%; animation-delay: 3s; }
 
         .win-header {
             display: flex;
@@ -624,16 +625,6 @@
         .win-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--neon-purple); opacity: 0.7; }
 
         .win-body { padding: 1rem; }
-
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.8rem; }
-        .tech-tags span {
-            font-size: 0.7rem;
-            padding: 0.25rem 0.6rem;
-            border: 1px solid var(--neon-purple);
-            border-radius: 20px;
-            color: #fff;
-            background: rgba(177, 74, 255, 0.15);
-        }
 
         .mini-bar {
             height: 6px;
@@ -662,6 +653,8 @@
         .fa-html5 { color: #e34f26; }
         .fa-css3-alt { color: #2965f1; }
         .fa-js { color: #f7df1e; }
+        .fa-robot { color: var(--neon-purple); }
+        .fa-meta { color: #0866ff; }
 
         .icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; text-align: center; }
         .icon-grid i { font-size: 1.4rem; color: var(--neon-purple); text-shadow: 0 0 15px var(--neon-purple); }
@@ -718,87 +711,113 @@
             transform: translateY(-3px);
         }
 
-        /* ===== PORTFOLIO SECTION ===== */
-        .portfolio-grid {
+        /* ===== PORTFOLIO===== */
+        .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .project-card {
+        .case-card {
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(15px);
             border-radius: 25px;
-            overflow: hidden;
             border: 2px solid rgba(177, 74, 255, 0.3);
+            overflow: hidden;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-        }
-
-        .project-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent 30%, rgba(177, 74, 255, 0.2));
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-20px) rotateX(5deg);
-            box-shadow: 0 30px 60px rgba(177, 74, 255, 0.5);
-            border-color: var(--neon-purple);
-        }
-
-        .project-card:hover::after {
-            opacity: 1;
-        }
-
-        .project-header {
-            height: 200px;
-            background: linear-gradient(135deg, var(--cyber-purple), var(--neon-purple));
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
+            flex-direction: column;
         }
 
-        .project-header::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: projectShine 3s ease infinite;
+        .case-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--neon-purple);
+            box-shadow: 0 30px 60px rgba(177, 74, 255, 0.5);
         }
 
-        @keyframes projectShine {
-            0% { transform: translateX(-100%) translateY(-100%); }
-            100% { transform: translateX(100%) translateY(100%); }
-        }
+        .case-header { padding: 2rem 2rem 1rem; }
 
-        .project-content {
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .project-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .case-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            border: 1px solid var(--neon-purple);
             color: var(--glow-purple);
+            background: rgba(177, 74, 255, 0.15);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
         }
 
-        .project-content p {
+        .case-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+
+        .case-quote {
+            color: var(--glow-purple);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .case-subtitle {
+            padding: 0 2rem;
+            color: var(--glow-purple);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-features {
+            list-style: none;
+            padding: 1rem 2rem 0;
+            margin: 0;
+        }
+
+        .case-features li {
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
             color: #ccc;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            font-size: 0.85rem;
+            margin-bottom: 0.7rem;
+            line-height: 1.5;
+        }
+
+        .case-features li i {
+            color: var(--neon-purple);
+            margin-top: 0.2rem;
+            text-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        .case-features li strong {
+            color: #fff;
+        }
+
+        .case-highlight {
+            margin: 0.5rem 2rem 1.5rem;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            background: linear-gradient(90deg, rgba(177, 74, 255, 0.25), rgba(124, 58, 237, 0.1));
+            border: 1px solid rgba(177, 74, 255, 0.4);
+            font-size: 0.8rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .case-links {
+            margin-top: auto;
+            display: flex;
+            gap: 1rem;
+            padding: 0 2rem 2rem;
+            flex-wrap: wrap;
         }
 
         .project-link {
@@ -839,51 +858,143 @@
             left: 100%;
         }
 
-        /* ===== BUSINESS SECTION ===== */
-        .business-card {
-            background: linear-gradient(135deg, rgba(177, 74, 255, 0.3), rgba(91, 33, 182, 0.3));
-            backdrop-filter: blur(20px);
-            border-radius: 30px;
-            padding: 4rem;
-            text-align: center;
-            border: 2px solid var(--neon-purple);
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
+        /* ===== PORTAFOLIO: FONDO CIRCUITO ANIMADO ===== */
+        #portafolio {
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill='none' stroke='%23b14aff' stroke-opacity='.12' stroke-width='2'%3E%3Cpath d='M20 20h80v60h60'/%3E%3Cpath d='M20 140h40v80'/%3E%3Cpath d='M140 20v40h80'/%3E%3Cpath d='M240 160h-80v60'/%3E%3C/g%3E%3Cg fill='%23b14aff' fill-opacity='.2'%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3Ccircle cx='160' cy='80' r='4'/%3E%3Ccircle cx='60' cy='220' r='4'/%3E%3Ccircle cx='140' cy='20' r='4'/%3E%3Ccircle cx='220' cy='60' r='4'/%3E%3Ccircle cx='240' cy='160' r='4'/%3E%3Ccircle cx='160' cy='220' r='4'/%3E%3Ccircle cx='20' cy='140' r='4'/%3E%3C/g%3E%3C/svg%3E") repeat;
             overflow: hidden;
         }
 
-        .business-card::before {
+        #portafolio::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, var(--neon-purple), transparent);
-            animation: rotate 10s linear infinite;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(15, 5, 25, 0.55) 0%, rgba(15, 5, 25, 0.9) 100%);
+            pointer-events: none;
         }
 
-        @keyframes rotate {
-            to { transform: rotate(360deg); }
+        .circuit-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .business-card-content {
+        .pulse {
+            position: absolute;
+            height: 2px;
+            width: 180px;
+            background: linear-gradient(90deg, transparent, var(--neon-purple), #fff, var(--neon-purple), transparent);
+            filter: drop-shadow(0 0 8px var(--neon-purple));
+            animation: runX 5s linear infinite;
+            opacity: 0.7;
+        }
+
+        .p1 { top: 12%; animation-duration: 4.5s; }
+        .p2 { top: 32%; width: 120px; animation-duration: 6s; animation-delay: 1s; }
+        .p3 { top: 55%; animation-duration: 5s; animation-delay: 2s; }
+        .p4 { top: 78%; width: 220px; animation-duration: 7s; animation-delay: 0.5s; }
+
+        .pulse.vertical {
+            width: 2px;
+            height: 140px;
+            background: linear-gradient(180deg, transparent, var(--neon-purple), #fff, var(--neon-purple), transparent);
+            animation: runY 6s linear infinite;
+        }
+
+        .p5 { left: 18%; animation-duration: 6s; }
+        .p6 { left: 82%; height: 180px; animation-duration: 7.5s; animation-delay: 1.5s; }
+
+        @keyframes runX {
+            from { left: -250px; }
+            to { left: 110%; }
+        }
+
+        @keyframes runY {
+            from { top: -200px; }
+            to { top: 110%; }
+        }
+
+        /* ===== NEGOCIO: VENTANA TAPIAS MARKETING ===== */
+        .biz-window {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(15, 5, 25, 0.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(177, 74, 255, 0.5);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(177, 74, 255, 0.35);
             position: relative;
-            z-index: 1;
+            animation: winFloat 7s ease-in-out infinite;
         }
 
-        .business-card h3 {
+        .biz-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(90deg, rgba(177, 74, 255, 0.4), rgba(124, 58, 237, 0.15));
+            border-bottom: 1px solid rgba(177, 74, 255, 0.3);
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
             color: #fff;
+            font-size: 0.9rem;
         }
 
-        .business-card p {
-            font-size: 1.3rem;
+        .biz-header .win-dots { margin-left: auto; }
+
+        .biz-body {
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .biz-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, #fff, var(--glow-purple), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.8rem;
+        }
+
+        .biz-team {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--glow-purple);
+            border: 1px solid rgba(177, 74, 255, 0.4);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: rgba(177, 74, 255, 0.12);
+            margin-bottom: 1.4rem;
+        }
+
+        .biz-desc {
+            color: #ccc;
+            line-height: 1.7;
+            max-width: 520px;
+            margin: 0 auto 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .biz-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
             margin-bottom: 2rem;
-            color: #e0e0e0;
+        }
+
+        .biz-tags span {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--neon-purple);
+            border-radius: 20px;
+            color: #fff;
+            background: rgba(177, 74, 255, 0.15);
         }
 
         .business-btn {
@@ -1086,14 +1197,29 @@
             box-shadow: 0 10px 30px rgba(177, 74, 255, 0.7);
         }
 
-        /* ===== FOOTER ===== */
-        footer {
-            text-align: center;
-            padding: 3rem 0;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(177, 74, 255, 0.3);
+        /* ===== ASCII ART ===== */
+        .ascii-art {
+            margin-top: 1.2rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(177, 74, 255, 0.3);
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: var(--glow-purple);
+            line-height: 1.4;
+            text-align: left;
+            white-space: pre;
+            overflow-x: auto;
         }
+
+        /* ===== FOOTER ===== */
+   footer {
+    text-align: center;
+    padding: 3rem 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
 
         footer p {
             color: #ccc;
@@ -1142,11 +1268,75 @@
             .nav-btn span { display: none; }
             #sobre-mi { background-attachment: scroll; }
         }
-	@media (max-height: 800px) {
-   	 .photo-frame { width: 180px; height: 180px; }
-    	.holo-scene { min-height: 640px; }
-    	#sobre-mi { padding: 50px 0; }
-	}
+
+        @media (max-height: 800px) {
+            .photo-frame { width: 180px; height: 180px; }
+            .holo-scene { min-height: 640px; }
+            #sobre-mi { padding: 50px 0; }
+        }
+/* ===== NEGOCIO: LAYOUT 3 ZONAS ===== */
+.negocio-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.negocio-layout .biz-window {
+    flex: 0 1 480px;
+    margin: 0;
+}
+
+.negocio-msg {
+    flex: 0 1 300px;
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.social-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (max-width: 1000px) {
+    .negocio-layout {
+        flex-direction: column;
+    }
+    .social-column {
+        flex-direction: row;
+    }
+}
+/* ===== NEGOCIO: FONDO RED DE CONEXIONES ===== */
+#negocio {
+    overflow: hidden;
+}
+
+.network-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+/* Capa oscura para sincronizar el fondo con el resto del sitio */
+#negocio::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(15, 5, 25, 0.92) 0%,
+        rgba(15, 5, 25, 0.8) 50%,
+        rgba(15, 5, 25, 0.92) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
     </style>
 </head>
 <body>
@@ -1171,10 +1361,6 @@
             <a href="#negocio" class="nav-btn">
                 <i class="fas fa-rocket"></i>
                 <span>Negocio</span>
-            </a>
-            <a href="#contacto" class="nav-btn">
-                <i class="fas fa-envelope"></i>
-                <span>Contacto</span>
             </a>
         </div>
     </div>
@@ -1235,6 +1421,7 @@
                     </div>
                 </div>
 
+                <!-- VENTANA 1: FRONTEND -->
                 <div class="holo-window win-1">
                     <div class="win-header">
                         <i class="fas fa-code"></i> Frontend
@@ -1252,6 +1439,7 @@
                     </div>
                 </div>
 
+                <!-- VENTANA 2: UX/UI -->
                 <div class="holo-window win-2">
                     <div class="win-header">
                         <i class="fas fa-pen-nib"></i> UX / UI
@@ -1266,6 +1454,7 @@
                     </div>
                 </div>
 
+                <!-- VENTANA 3: MARKETING -->
                 <div class="holo-window win-3">
                     <div class="win-header">
                         <i class="fas fa-chart-line"></i> Marketing
@@ -1279,6 +1468,7 @@
                     </div>
                 </div>
 
+                <!-- VENTANA 4: SOFT SKILLS -->
                 <div class="holo-window win-4">
                     <div class="win-header">
                         <i class="fas fa-brain"></i> Skills
@@ -1294,6 +1484,7 @@
                     </div>
                 </div>
 
+                <!-- VENTANA 5: CONTACTO -->
                 <div class="holo-window win-5">
                     <div class="win-header">
                         <i class="fas fa-map-marker-alt"></i> Contacto
@@ -1309,96 +1500,152 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- VENTANA 6: MI FUERTE -->
+                <div class="holo-window win-6">
+                    <div class="win-header">
+                        <i class="fas fa-bolt"></i> Mi Fuerte
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="win-body">
+                        <div class="stat-row"><span><i class="fas fa-robot"></i> Automatizaciones</span><span>90%</span></div>
+                        <div class="mini-bar"><div style="width:90%"></div></div>
+                        <div class="stat-row"><span><i class="fab fa-meta"></i> Meta Business</span><span>95%</span></div>
+                        <div class="mini-bar"><div style="width:95%"></div></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portafolio">
+        <div class="circuit-bg">
+            <span class="pulse p1"></span>
+            <span class="pulse p2"></span>
+            <span class="pulse p3"></span>
+            <span class="pulse p4"></span>
+            <span class="pulse vertical p5"></span>
+            <span class="pulse vertical p6"></span>
+        </div>
         <div class="container">
             <h2 class="section-title fade-in">PORTAFOLIO</h2>
-            <div class="portfolio-grid">
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <i class="fas fa-store"></i>
+            <div class="cases-grid">
+
+                <!-- Proyecto: LES KOMBI -->
+                <div class="case-card fade-in">
+                    <div class="case-header">
+                        <span class="case-badge">Proyecto actual · Música</span>
+                        <h3 class="case-title">Les Kombi 🚐</h3>
+                        <p class="case-quote">"Súbete a la Kombi Sonora"</p>
                     </div>
-                    <div class="project-content">
-                        <h3>Tapias Marketing</h3>
-                        <p>Plataforma de marketing digital enfocada en transformar mentalidades y multiplicar ingresos. Diseño limpio y funcional con enfoque en conversión.</p>
-                        <a href="https://github.com/Leonelarodri/tapiasmarketing" class="project-link" target="_blank">
-                            Ver Proyecto <i class="fas fa-arrow-right"></i>
-                        </a>
+
+                    <p class="case-subtitle"><i class="fas fa-bolt"></i> MI COLABORACIÓN</p>
+
+                    <ul class="case-features">
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Automatizaciones en la landing y Web:</strong> captura de leads para campañas con sistema automático de mensajería</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Sistema Meta Business:</strong> activación para campañas estratégicas</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Meta Pixel:</strong> monitoreo de clicks desde YouTube, Spotify y Apple Music</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Automatización de correos de bienvenida:</strong> plantillas HTML personalizadas enviadas en tiempo real tras la captura de cada lead</span></li>
+                    </ul>
+
+                    <div class="case-highlight">
+                        🏆 LES KOMBI: <strong>"Bailar de La'O"</strong> — Postulado a los Latin Grammy 2026<br>
+                        🌍 Gira 2026-2027: Colombia, Ecuador, Venezuela, México y Europa
+                    </div>
+
+                    <div class="case-links">
+                        <a href="https://tapiasmarketing.com/" target="_blank" class="project-link">Ver caso ↗</a>
+                        <a href="https://www.instagram.com/les.kombi/" target="_blank" class="project-link"><i class="fab fa-instagram"></i> Su música</a>
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <i class="fas fa-book-open"></i>
+                <!-- Proyecto: SMART TRADING SYSTEMS -->
+                <div class="case-card fade-in">
+                    <div class="case-header">
+                        <span class="case-badge">Proyecto actual · Trading & Productos Digitales</span>
+                        <h3 class="case-title">Smart Trading Systems 📊</h3>
+                        <p class="case-quote">"Herramientas profesionales para automatizar tu trading"</p>
                     </div>
-                    <div class="project-content">
-                        <h3>Diario de Manifestación</h3>
-                        <p>Aplicación web para diario de gratitud y manifestación personal. Interfaz intuitiva y diseño centrado en la experiencia del usuario.</p>
-                        <a href="https://github.com/Leonelarodri/manifestacion" class="project-link" target="_blank">
-                            Ver Proyecto <i class="fas fa-arrow-right"></i>
-                        </a>
+
+                    <p class="case-subtitle"><i class="fas fa-bolt"></i> MI COLABORACIÓN</p>
+
+                    <ul class="case-features">
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Sistema de referidos:</strong> automatización en landing page con mensajería x2 y base de datos automático</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>BOT de campañas por Telegram:</strong> asistente que envía mensajes HTML personalizados para entregar herramientas de trading, promociones, bienvenidas y noticias</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Automatización de WhatsApp:</strong> mensajes automáticos integrados directamente al embudo de ventas</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Campañas en Meta Business:</strong> segmentación dirigida a público estratégico con intención de compra</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Creación de contenido:</strong> edición de video y contenido para Instagram, YouTube y Skool</span></li>
+                    </ul>
+
+                    <div class="case-highlight">
+                        🤖 SMART TRADING SYSTEMS: <strong>Indicadores Profesionales de trading</strong><br>
+                        Diseñados para precisión, velocidad y confianza en cada trade.
+                    </div>
+
+                    <div class="case-links">
+                        <a href="https://smarttradingsystems.net/" target="_blank" class="project-link">Ver web en vivo ↗</a>
+                        <a href="https://tapiasmarketing.com/" target="_blank" class="project-link">Ver caso ↗</a>
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Taty's Coquette</h3>
-                        <p>Sitio web para tienda de moda con diseño atractivo y responsive. Enfoque en experiencia de compra fluida y visualmente atractiva.</p>
-                        <a href="https://github.com/Leonelarodri/tatys-coquette" class="project-link" target="_blank">
-                            Ver Proyecto <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Business Section -->
-    <section id="negocio">
-        <div class="container">
-            <h2 class="section-title fade-in">MI NEGOCIO</h2>
-            <div class="business-card fade-in">
-                <div class="business-card-content">
-                    <h3>TAPIAS MARKETING</h3>
-                    <p>Transformando mentalidades, multiplicando ingresos. Servicios de marketing digital para emprendedores y pequeñas empresas.</p>
-                    <a href="https://www.instagram.com/tapiasmarketing/" class="business-btn" target="_blank">
-                        <i class="fab fa-instagram"></i> Sígueme en Instagram
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Business Section -->
+<section id="negocio">
+    <canvas id="networkCanvas" class="network-canvas"></canvas>
+    <div class="container">
+        <h2 class="section-title fade-in">NUESTRO NEGOCIO</h2>
 
-    <!-- Contact Section -->
-    <section id="contacto">
-        <div class="container">
-            <h2 class="section-title fade-in">CONTACTO</h2>
-            <div class="contact-container fade-in">
-                <p style="font-size: 1.2rem; color: #e0e0e0; margin-bottom: 2rem;">¿Interesada en colaborar o tienes alguna oportunidad de trabajo? ¡No dudes en contactarme!</p>
-                <div class="social-links">
-                    <a href="https://github.com/Leonelarodri" class="social-btn" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/leonelatapias/" class="social-btn" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://www.instagram.com/tapiasmarketing/" class="social-btn" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="mailto:leonela.tapias@gmail.com" class="social-btn" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
+        <div class="negocio-layout fade-in">
+
+            <!-- IZQUIERDA: VENTANA TAPIAS MARKETING -->
+            <div class="biz-window">
+                <div class="biz-header">
+                    <i class="fas fa-rocket"></i> SYSTEM ONLINE
+                    <div class="win-dots"><i></i><i></i><i></i></div>
+                </div>
+                <div class="biz-body">
+                    <h3 class="biz-logo">TAPIAS MARKETING</h3>
+                    <div class="biz-team">👩‍💻 Leonela & Erick · Equipo 💜</div>
+                    <p class="biz-desc">Transformando mentalidades, multiplicando ingresos. Creamos webs, tiendas online, automatizaciones y campañas estratégicas para que tu negocio venda 24/7.</p>
+                    <div class="biz-tags">
+                        <span>Webs & Landing</span>
+                        <span>Automatizaciones</span>
+                        <span>Meta Business</span>
+                        <span>Tiendas Online</span>
+                        <span>Email Marketing</span>
+                    </div>
+                    <a href="https://tapiasmarketing.com/" target="_blank" class="business-btn">
+                        <i class="fas fa-globe"></i> Visita nuestra web
                     </a>
                 </div>
             </div>
+
+            <!-- CENTRO: MENSAJE -->
+            <p class="negocio-msg">¿Quieres llevar tu marca al siguiente nivel? En Tapias Marketing convertimos tus ideas en contenido que conecta, destaca y vende.</p>
+
+            <!-- DERECHA: BOTONES EN COLUMNA -->
+            <div class="social-column">
+                <a href="https://github.com/Leonelarodri" class="social-btn" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/leonelatapias/" class="social-btn" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/tapiasmarketing/" class="social-btn" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:leonela.tapias@gmail.com" class="social-btn" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Modals -->
     <div class="holo-modal" id="modal-viajar">
@@ -1409,7 +1656,27 @@
                 <button class="modal-close">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Explorar las costas de Venezuela es mi forma de reconectar con la naturaleza y con lo que realmente importa. Junto a mi esposo y a bordo de nuestra kombi "La Bonita", hemos recorrido Cuyagua, Patanemo y Cabo San Román. Cada ruta me enseña a disfrutar el proceso y me devuelve con la creatividad y la perspectiva fresca que aplico en mi trabajo.</p>
+                <p>Explorar las costas de Venezuela Junto a mi esposo y nuestra kombi La Bonita es mi forma de reconectar con la naturaleza, cada ruta me enseña a disfrutar el proceso y me devuelve con la creatividad y la perspectiva fresca que aplico en mi trabajo.</p>
+<pre class="ascii-art">
+                                .* * .
+                               * . * .
+                     \|/        *\|/*
+                    --*--         |
+                     /|\          |
+                                  |
+         .---.----------.         |
+        / |_.| _ ._._. |' \       |
+       / ||__|__|__|__||__|\      |
+      |.-|====|====|====|.-|      |
+      |  | \/ |    |    |  |      |
+      |.-'----'----'----'-.|      |
+      \__  La_ Bonita_   __/      |
+       |__// \______// \__|      /|\
+       '--'\_/------'\_/'--'    / | \
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      → La Bonita: próxima parada... 🚐💨
+</pre>
             </div>
         </div>
     </div>
@@ -1422,7 +1689,17 @@
                 <button class="modal-close">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Crear arte es mi estado de flow: ese espacio donde desconecto de lo cotidiano y regreso con ideas frescas. Bajo el nombre @icoostudioart, transformo materiales industriales en piezas con alma. Esa capacidad de ver potencial donde otros ven límites define mi arte y mi forma de diseñar experiencias digitales.</p>
+                <p>Crear arte es mi estado de flow, en @icoostudioart, transformo materiales industriales en piezas con alma, es ese espacio donde desconecto de lo cotidiano y regreso con ideas nuevas para diseñar experiencias digitales.</p>
+<pre class="ascii-art">
+                 .-.-.
+                 '. .'
+                   '
+      ______             ______
+     /|_||_\`.__        /|_||_\`.__
+    (   _    _ _\      (   _    _ _\
+    =`-(_)--(_)-'      =`-(_)--(_)-' 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</pre>
                 <a href="https://www.instagram.com/icoostudioart/" target="_blank" class="modal-insta">
                     <i class="fab fa-instagram"></i> @icoostudioart
                 </a>
@@ -1439,6 +1716,18 @@
             </div>
             <div class="modal-body">
                 <p>Lo que empezó como una forma de compartir el hobby de mi esposo se convirtió en una pasión propia. Patinar me enseñó que el crecimiento sucede fuera de la zona de confort: equilibrio, paciencia y alegría por avanzar paso a paso. Porque en los patines, como en cada proyecto, lo importante es levantarse cada vez que se cae.</p>
+<pre class="ascii-art">
+           ______            ______
+          |      |          |      | 
+          |  ==  |          |  ==  |
+          |  ==  |          |  ==  |
+       ___|      |       ___|      |
+      /          |      /          |
+     /___________|     /___________|
+     __/__/__/__/__    __/__/__/__/__
+      O  O  O  O        O  O  O  O
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</pre>
             </div>
         </div>
     </div>
@@ -1452,6 +1741,13 @@
             </div>
             <div class="modal-body">
                 <p>Practicar gratitud a diario fue el spark que encendió mi mente y me llevó a dedicarme a lo que realmente amo. Agradecer mi presente y visualizar el futuro que quiero vivir me dio claridad y propósito. Esa mentalidad es la que llevo a cada proyecto: enfoque, gratitud y visión de abundancia.</p>
+<pre class="ascii-art">
+  ____ ____      _    ____ ___    _    ____  
+ / ___|  _ \    / \  / ___|_ _|  / \  / ___| 
+| |  _| |_) |  / _ \| |    | |  / _ \ \___ \ 
+| |_| |  _ <  / ___ \ |___ | | / ___ \ ___) |
+ \____|_| \_\/_/   \_\____|___/_/   \_\____/
+</pre>
             </div>
         </div>
     </div>
@@ -1468,6 +1764,20 @@
                 <p style="margin-top: 1rem; color: var(--glow-purple); font-size: 0.85rem;">
                     📖 <strong>Autores que me inspiran:</strong> Marian Rojas Estapé, Mario Alonso Puig y Tony Robbins.
                 </p>
+<pre class="ascii-art">
+ _________________________   ___________________________
+-/|                         \/                         |\-
+|||  La magia de leer       ||  --------------------   |||
+|||  --------------------   ||  --------------------   |||
+|||  ....................   ||  ....................   |||
+|||  ....................   ||  ....................   |||
+|||  ....................   ||  ....................   |||
+|||  ....................   ||  ya no puedes volver    |||
+|||  ....................   ||  ...a ser quien eras.   |||
+|||_________________________||_________________________|||
+|/==========================\/==========================\|
+----------------------------~--~-------------------------'
+</pre>
             </div>
         </div>
     </div>
@@ -1524,32 +1834,32 @@
             const canvas = document.getElementById('matrixCanvas');
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
-            
+
             function resizeCanvas() {
                 const hero = document.querySelector('.hero');
                 canvas.width = hero.offsetWidth;
                 canvas.height = hero.offsetHeight;
             }
-            
+
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
-            
+
             const fontSize = 16;
             const columns = canvas.width / fontSize;
             const drops = [];
-            
+
             for (let i = 0; i < columns; i++) {
                 drops[i] = Math.random() * -100;
             }
-            
+
             const chars = '01010101010101010101010101010101010101';
-            
+
             function drawMatrix() {
                 ctx.fillStyle = 'rgba(15, 5, 25, 0.08)';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 ctx.fillStyle = '#b14aff';
                 ctx.font = fontSize + 'px monospace';
-                
+
                 for (let i = 0; i < drops.length; i++) {
                     const char = chars[Math.floor(Math.random() * chars.length)];
                     const x = i * fontSize;
@@ -1558,14 +1868,14 @@
                     ctx.shadowColor = '#b14aff';
                     ctx.fillText(char, x, y);
                     ctx.shadowBlur = 0;
-                    
+
                     if (y > canvas.height && Math.random() > 0.975) {
                         drops[i] = 0;
                     }
                     drops[i]++;
                 }
             }
-            
+
             setInterval(drawMatrix, 50);
         }
 
@@ -1588,12 +1898,82 @@
                 if (e.target === modal) modal.classList.remove('active');
             });
         });
+	// Network Connections Effect
+function initNetwork() {
+    const canvas = document.getElementById('networkCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const section = document.getElementById('negocio');
 
+    function resize() {
+        canvas.width = section.offsetWidth;
+        canvas.height = section.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const nodes = [];
+    const count = 45;
+
+    for (let i = 0; i < count; i++) {
+        nodes.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6,
+            r: Math.random() * 2 + 1
+        });
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Mover nodos
+        for (const n of nodes) {
+            n.x += n.vx;
+            n.y += n.vy;
+            if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+            if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+        }
+
+        // Líneas de conexión
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                const dx = nodes[i].x - nodes[j].x;
+                const dy = nodes[i].y - nodes[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 140) {
+                    ctx.strokeStyle = 'rgba(177, 74, 255,' + (1 - dist / 140) * 0.5 + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(nodes[i].x, nodes[i].y);
+                    ctx.lineTo(nodes[j].x, nodes[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Nodos brillantes
+        for (const n of nodes) {
+            ctx.fillStyle = 'rgba(216, 180, 254, 0.8)';
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = '#2c0847';
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        }
+
+        requestAnimationFrame(draw);
+    }
+    draw();
+}
         // Initialize
         window.addEventListener('load', () => {
             createParticles();
             handleScroll();
             initMatrix();
+	    initNetwork();
         });
 
         window.addEventListener('scroll', handleScroll);
