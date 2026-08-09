@@ -1337,6 +1337,215 @@
     z-index: 0;
     pointer-events: none;
 }
+/* ===== MOBILE POLISH ✨ ===== */
+@media (max-width: 768px) {
+    /* Hero: foto sin estirar, centrada en tu cara */
+    .hero {
+        animation: none;
+        background-size: cover;
+        background-position: center 30%;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 9vw, 3.5rem);
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* Secciones con menos aire */
+    section { padding: 70px 0; }
+    .section-title { font-size: 1.8rem; }
+
+    /* Sobre mí: foto y ventanas a medida */
+    .photo-frame { width: 200px; height: 200px; }
+    .holo-name { font-size: 1.2rem; }
+    .holo-tagline { font-size: 0.75rem; padding: 0 1rem; }
+    .holo-window { max-width: 340px; }
+
+    /* Portafolio: 1 columna, cero desborde */
+    .cases-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .case-header,
+    .case-features,
+    .case-links { padding-left: 1.4rem; padding-right: 1.4rem; }
+    .case-subtitle { padding: 0 1.4rem; }
+    .case-highlight { margin-left: 1.4rem; margin-right: 1.4rem; }
+
+    /* Negocio apilado bonito */
+    .negocio-layout { gap: 2rem; }
+    .negocio-layout .biz-window { flex: 1 1 auto; width: 100%; }
+    .biz-logo { font-size: 1.6rem; }
+    .business-btn { padding: 1rem 2rem; font-size: 1rem; }
+    .social-btn { width: 56px; height: 56px; font-size: 1.4rem; }
+
+    /* ASCII art y footer */
+    .ascii-art { font-size: 0.6rem; }
+    footer { padding-bottom: 6rem; }
+}
+
+@media (max-width: 400px) {
+    .hero-title { font-size: 2rem; }
+    .hex-mini { width: 50px; height: 57px; }
+    .hex-mini i { font-size: 1rem; }
+}
+/* ===== MOBILE FIX v2 📱 ===== */
+html, body {
+    overflow-x: hidden;
+}
+
+img { max-width: 100%; }
+
+@media (max-width: 768px) {
+    /* Mata la banda morada: nada puede estirar la página */
+    html, body { overflow-x: clip; }
+    section { overflow-x: clip; }
+
+    /* Hero: foto nítida, sin estirar */
+    .hero {
+        animation: none;
+        background-size: cover;
+        background-position: center 30%;
+    }
+    .hero-title { font-size: clamp(2rem, 9vw, 3.2rem); letter-spacing: 2px; }
+    .hero-subtitle { font-size: 1rem; padding: 0 1rem; }
+
+    section { padding: 70px 0; }
+    .section-title { font-size: 1.7rem; }
+
+    /* La huella vuelve a brillar en móvil */
+    #sobre-mi { background-position: center 12%; }
+    #sobre-mi::before {
+        background: linear-gradient(180deg,
+            rgba(15, 5, 25, 0.88) 0%,
+            rgba(15, 5, 25, 0.5) 25%,
+            rgba(15, 5, 25, 0.5) 75%,
+            rgba(15, 5, 25, 0.88) 100%);
+    }
+
+    /* Sobre mí a medida */
+    .photo-frame { width: 190px; height: 190px; }
+    .holo-name { font-size: 1.15rem; }
+    .holo-tagline { font-size: 0.75rem; padding: 0 1rem; }
+    .holo-window { width: 100%; max-width: 100%; }
+
+    /* Portafolio: 1 columna, cero desborde */
+    .cases-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .case-header, .case-features, .case-links { padding-left: 1.3rem; padding-right: 1.3rem; }
+    .case-subtitle { padding: 0 1.3rem; }
+    .case-highlight { margin: 0.5rem 1.3rem 1.5rem; }
+
+    /* Negocio apilado */
+    .negocio-layout { flex-direction: column; gap: 2rem; }
+    .negocio-layout .biz-window { flex: 1 1 auto; width: 100%; }
+    .biz-logo { font-size: 1.5rem; }
+    .social-column { flex-direction: row; }
+    .social-btn { width: 54px; height: 54px; font-size: 1.3rem; }
+
+    .ascii-art { font-size: 0.55rem; }
+    footer { padding-bottom: 6rem; }
+}
+
+@media (max-width: 400px) {
+    .hero-title { font-size: 1.9rem; }
+    .hex-mini { width: 48px; height: 55px; }
+    .hex-mini i { font-size: 0.95rem; }
+    .hex-mini-row { gap: 0.6rem; }
+}
+/* ===== SOBRE MÍ: MODO COMPACTO MÓVIL 📱 ===== */
+@media (max-width: 768px) {
+    .holo-scene {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        background: rgba(15, 5, 25, 0.55);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(177, 74, 255, 0.35);
+        border-radius: 20px;
+        padding: 1.2rem 0.8rem;
+        box-shadow: 0 0 40px rgba(177, 74, 255, 0.2);
+        min-height: auto;
+    }
+
+    /* Tu perfil ocupa el ancho completo arriba */
+    .holo-center {
+        grid-column: 1 / -1;
+    }
+
+    .photo-frame { width: 160px; height: 160px; }
+    .holo-name { font-size: 1.05rem; }
+
+    /* Ventanitas en mini, sin flotar */
+    .holo-window {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        animation: none;
+    }
+
+    /* Texto compacto para que quepa bonito */
+    .win-header { font-size: 0.62rem; padding: 0.5rem 0.6rem; }
+    .win-body { padding: 0.7rem 0.6rem; }
+    .stat-row { font-size: 0.6rem; }
+    .icon-grid { gap: 0.3rem; }
+    .icon-grid i { font-size: 1rem; }
+    .icon-grid span { font-size: 0.5rem; }
+    .mini-chart { height: 40px; }
+    .win-social a { width: 28px; height: 28px; }
+}
+@media (max-width: 768px) {
+    .holo-scene {
+        /* Más aire arriba: el círculo completo queda dentro */
+        padding: 3.2rem 0.8rem 1.2rem;
+        /* Más transparente: la huella se ve sutil debajo */
+        background: rgba(15, 5, 25, 0.35);
+    }
+}
+/* ===== TÍTULOS CENTRADOS SIEMPRE (a prueba de animaciones) ===== */
+.section-title {
+    display: block;
+    width: 100%;
+    left: 0;
+    transform: none;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .holo-scene {
+        background: rgba(15, 5, 25, 0.25);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
+}
+/* ===== BOTONERA MÓVIL: ARRIBA A LA DERECHA ===== */
+@media (max-width: 768px) {
+    .nav-container {
+        position: fixed;
+        top: 15px;
+        right: 12px;
+        bottom: auto;
+        transform: none;
+    }
+
+    .nav-button {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+    .nav-btn i { font-size: 1rem; }
+
+    /* El footer respira sin botones encima */
+    footer { padding-bottom: 3rem; }
+}
     </style>
 </head>
 <body>
