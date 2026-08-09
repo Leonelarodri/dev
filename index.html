@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonela Tapias | Desarrolladora Frontend & UX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-purple: #b14aff;
+            --electric-purple: #7c3aed;
+            --cyber-purple: #5b21b6;
+            --deep-space: #1a0b2e;
+            --dark-matter: #0f0519;
+            --glow-purple: #d8b4fe;
+            --particle-color: rgba(177, 74, 255, 0.6);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-matter);
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ===== PARTICLES BACKGROUND ===== */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--particle-color);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+            box-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* ===== ANIMATED GRADIENT BACKGROUND ===== */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--deep-space), var(--cyber-purple), var(--deep-space));
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: url('https://smarttradingsystems.net/imagen/FondoLeonela.jpg') center center / cover no-repeat;
+            animation: subtleMovement 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes subtleMovement {
+            0% {
+                background-size: 100% 100%;
+                background-position: center center;
+            }
+            50% {
+                background-size: 105% 105%;
+                background-position: 45% 55%;
+            }
+            100% {
+                background-size: 102% 102%;
+                background-position: 55% 45%;
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(15, 5, 25, 0.7) 0%, 
+                rgba(91, 33, 182, 0.5) 50%, 
+                rgba(15, 5, 25, 0.7) 100%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(15, 5, 25, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff, var(--glow-purple), var(--neon-purple));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease infinite;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(177, 74, 255, 0.8), 0 0 60px rgba(177, 74, 255, 0.4);
+            letter-spacing: 3px;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            text-shadow: 0 0 20px rgba(177, 74, 255, 0.6);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--glow-purple);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+
+        /* ===== MATRIX EFFECT ===== */
+        .matrix-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* ===== FLOATING NAVIGATION ===== */
+        .nav-container {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .nav-button {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(177, 74, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--neon-purple);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--neon-purple), var(--electric-purple));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.2) rotate(360deg);
+            box-shadow: 0 0 30px var(--neon-purple);
+        }
+
+        .nav-btn:hover::before {
+            opacity: 1;
+        }
+
+        .nav-btn i {
+            font-size: 1.2rem;
+            z-index: 1;
+        }
+
+        .nav-btn span {
+            position: absolute;
+            right: 70px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s;
+            border: 1px solid var(--neon-purple);
+        }
+
+        .nav-btn:hover span {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            min-height: 100vh;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                opacity: 0.5;
+                width: 100px;
+            }
+            50% {
+                opacity: 1;
+                width: 150px;
+            }
+        }
+
+        /* ===== ABOUT SECTION ===== */
+       	#sobre-mi {
+    	background: url('https://smarttradingsystems.net/imagen/FondoSobreMi.png') center center / cover no-repeat;
+   	 padding: 70px 0;
+	}
+
+        #sobre-mi::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                rgba(15, 5, 25, 0.95) 0%,
+                rgba(15, 5, 25, 0.75) 50%,
+                rgba(15, 5, 25, 0.95) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        #sobre-mi::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 140px;
+            top: -20%;
+            background: linear-gradient(180deg,
+                transparent,
+                rgba(177, 74, 255, 0.12),
+                rgba(216, 180, 254, 0.35),
+                rgba(177, 74, 255, 0.12),
+                transparent);
+            border-bottom: 2px solid rgba(216, 180, 254, 0.4);
+            box-shadow: 0 5px 25px rgba(177, 74, 255, 0.4);
+            animation: scanLine 7s linear infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes scanLine {
+            0% { top: -20%; }
+            100% { top: 110%; }
+        }
+
+        /* ===== HOLOGRAPHIC SCENE ===== */
+        .holo-scene {
+    	position: relative;
+    	min-height: 720px;
+    	margin-top: 1rem;
+	}
+
+        .holo-scene::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 600px;
+            height: 600px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(177, 74, 255, 0.25), transparent 70%);
+            z-index: 0;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .holo-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            animation: centerFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes centerFloat {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-15px); }
+        }
+
+        .photo-frame {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            box-shadow: 0 0 40px rgba(177, 74, 255, 0.6),
+                        inset 0 0 20px rgba(177, 74, 255, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .photo-ring {
+            position: absolute;
+            inset: -20px;
+            border: 2px dashed rgba(177, 74, 255, 0.5);
+            border-radius: 50%;
+            animation: spin 12s linear infinite;
+            z-index: 1;
+        }
+
+        .ring-2 {
+            inset: -35px;
+            border-style: solid;
+            border-color: transparent;
+            border-top-color: var(--glow-purple);
+            border-bottom-color: var(--glow-purple);
+            animation: spin 8s linear infinite reverse;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .holo-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(177, 74, 255, 0.8);
+            margin-bottom: 0.4rem;
+        }
+
+        .holo-tagline {
+            color: var(--glow-purple);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .holo-quote {
+            color: #bbb;
+            font-size: 0.8rem;
+            max-width: 320px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .mini-label {
+            margin-top: 1.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--glow-purple);
+            opacity: 0.85;
+        }
+
+        .hex-mini-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .hex-mini-wrap {
+            position: relative;
+            animation: hexFloat 5s ease-in-out infinite;
+        }
+
+        .hex-mini-wrap:nth-child(2) { animation-delay: 0.6s; }
+        .hex-mini-wrap:nth-child(3) { animation-delay: 1.2s; }
+        .hex-mini-wrap:nth-child(4) { animation-delay: 1.8s; }
+        .hex-mini-wrap:nth-child(5) { animation-delay: 2.4s; }
+
+        .hex-mini {
+            width: 60px;
+            height: 68px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: linear-gradient(135deg, rgba(177, 74, 255, 0.7), rgba(124, 58, 237, 0.25));
+            padding: 2px;
+            cursor: pointer;
+            transition: filter 0.3s, transform 0.3s;
+            display: flex;
+        }
+
+        .hex-mini-inner {
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: rgba(15, 5, 25, 0.92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hex-mini i {
+            font-size: 1.25rem;
+            color: var(--neon-purple);
+            text-shadow: 0 0 12px var(--neon-purple);
+            transition: 0.3s;
+        }
+
+        .hex-mini:hover {
+            filter: drop-shadow(0 0 15px rgba(177, 74, 255, 0.9));
+            transform: scale(1.15);
+        }
+
+        .hex-mini:hover i { color: #fff; }
+
+        .hex-mini-wrap::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: -26px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid var(--neon-purple);
+            color: var(--glow-purple);
+            font-size: 0.65rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            transition: 0.3s;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .hex-mini-wrap:hover::after {
+            transform: translateX(-50%) scale(1);
+        }
+
+        @keyframes hexFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* ===== HOLOGRAPHIC WINDOWS ===== */
+        .holo-window {
+            position: absolute;
+            width: 250px;
+            background: rgba(15, 5, 25, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(177, 74, 255, 0.4);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(177, 74, 255, 0.25);
+            animation: winFloat 7s ease-in-out infinite;
+            z-index: 1;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .holo-window:hover {
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 30px rgba(177, 74, 255, 0.6);
+            z-index: 3;
+        }
+
+        @keyframes winFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .win-1 { top: 3%; left: 3%; animation-delay: 0s; }
+        .win-2 { bottom: 8%; left: 6%; animation-delay: 1.2s; }
+        .win-3 { top: 3%; right: 3%; animation-delay: 0.6s; }
+        .win-4 { top: 40%; right: 1%; animation-delay: 1.8s; }
+        .win-5 { bottom: 4%; right: 6%; animation-delay: 2.4s; }
+
+        .win-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 0.9rem;
+            background: linear-gradient(90deg, rgba(177, 74, 255, 0.35), rgba(124, 58, 237, 0.15));
+            border-bottom: 1px solid rgba(177, 74, 255, 0.3);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--glow-purple);
+        }
+
+        .win-dots { margin-left: auto; display: flex; gap: 4px; }
+        .win-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--neon-purple); opacity: 0.7; }
+
+        .win-body { padding: 1rem; }
+
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.8rem; }
+        .tech-tags span {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            border: 1px solid var(--neon-purple);
+            border-radius: 20px;
+            color: #fff;
+            background: rgba(177, 74, 255, 0.15);
+        }
+
+        .mini-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+        }
+
+        .mini-bar div {
+            height: 100%;
+            background: linear-gradient(90deg, var(--electric-purple), var(--neon-purple));
+            border-radius: 3px;
+            box-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            margin-bottom: 0.4rem;
+            color: #ccc;
+        }
+
+        .stat-row i { margin-right: 0.4rem; }
+        .fa-html5 { color: #e34f26; }
+        .fa-css3-alt { color: #2965f1; }
+        .fa-js { color: #f7df1e; }
+
+        .icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; text-align: center; }
+        .icon-grid i { font-size: 1.4rem; color: var(--neon-purple); text-shadow: 0 0 15px var(--neon-purple); }
+        .icon-grid span { display: block; font-size: 0.65rem; color: #ccc; margin-top: 0.3rem; }
+
+        .mini-chart { display: flex; align-items: flex-end; gap: 6px; height: 60px; margin-bottom: 0.6rem; }
+        .mini-chart i {
+            flex: 1;
+            background: linear-gradient(180deg, var(--neon-purple), var(--electric-purple));
+            border-radius: 3px 3px 0 0;
+            box-shadow: 0 0 10px rgba(177, 74, 255, 0.5);
+            transform-origin: bottom;
+            animation: chartPulse 2s ease-in-out infinite;
+        }
+        .mini-chart i:nth-child(2) { animation-delay: 0.3s; }
+        .mini-chart i:nth-child(3) { animation-delay: 0.6s; }
+        .mini-chart i:nth-child(4) { animation-delay: 0.9s; }
+        .mini-chart i:nth-child(5) { animation-delay: 1.2s; }
+
+        @keyframes chartPulse {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.15); }
+        }
+
+        .status-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: #8effc1; margin-bottom: 0.6rem; }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 10px #22c55e;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink { 50% { opacity: 0.4; } }
+
+        .win-social { display: flex; gap: 0.8rem; justify-content: center; margin-top: 0.6rem; }
+        .win-social a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid var(--neon-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--glow-purple);
+            transition: 0.3s;
+        }
+
+        .win-social a:hover {
+            background: var(--neon-purple);
+            color: #fff;
+            box-shadow: 0 0 15px var(--neon-purple);
+            transform: translateY(-3px);
+        }
+
+        /* ===== PORTFOLIO SECTION ===== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid rgba(177, 74, 255, 0.3);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 30%, rgba(177, 74, 255, 0.2));
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(177, 74, 255, 0.5);
+            border-color: var(--neon-purple);
+        }
+
+        .project-card:hover::after {
+            opacity: 1;
+        }
+
+        .project-header {
+            height: 200px;
+            background: linear-gradient(135deg, var(--cyber-purple), var(--neon-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: projectShine 3s ease infinite;
+        }
+
+        @keyframes projectShine {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        .project-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--glow-purple);
+        }
+
+        .project-content p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--neon-purple);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            background: rgba(177, 74, 255, 0.2);
+            border-radius: 50px;
+            border: 1px solid var(--neon-purple);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-link:hover {
+            background: var(--neon-purple);
+            color: white;
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(177, 74, 255, 0.5);
+        }
+
+        .project-link:hover::before {
+            left: 100%;
+        }
+
+        /* ===== BUSINESS SECTION ===== */
+        .business-card {
+            background: linear-gradient(135deg, rgba(177, 74, 255, 0.3), rgba(91, 33, 182, 0.3));
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            border: 2px solid var(--neon-purple);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--neon-purple), transparent);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        .business-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .business-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .business-card p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+
+        .business-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--neon-purple), var(--electric-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(177, 74, 255, 0.5);
+        }
+
+        .business-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(177, 74, 255, 0.7);
+            border-color: #fff;
+        }
+
+        .business-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cyber-purple), var(--neon-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-10px) rotate(360deg) scale(1.2);
+            border-color: #fff;
+            box-shadow: 0 20px 50px rgba(177, 74, 255, 0.7);
+        }
+
+        .social-btn:hover::before {
+            opacity: 1;
+        }
+
+        /* ===== HOLOGRAPHIC MODALS ===== */
+        .holo-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 5, 25, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            padding: 20px;
+        }
+
+        .holo-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 540px;
+            background: rgba(15, 5, 25, 0.97);
+            border: 1px solid var(--neon-purple);
+            border-radius: 20px;
+            box-shadow: 0 0 60px rgba(177, 74, 255, 0.5), inset 0 0 30px rgba(177, 74, 255, 0.08);
+            transform: scale(0.8) translateY(40px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .holo-modal.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            top: -20%;
+            background: linear-gradient(180deg, transparent, rgba(177, 74, 255, 0.15), transparent);
+            animation: scanLine 4s linear infinite;
+            pointer-events: none;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 1.5rem;
+            background: linear-gradient(90deg, rgba(177, 74, 255, 0.35), rgba(124, 58, 237, 0.1));
+            border-bottom: 1px solid rgba(177, 74, 255, 0.3);
+        }
+
+        .modal-header i {
+            font-size: 1.5rem;
+            color: var(--neon-purple);
+            text-shadow: 0 0 15px var(--neon-purple);
+        }
+
+        .modal-header h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+        }
+
+        .modal-close {
+            margin-left: auto;
+            background: none;
+            border: 1px solid rgba(177, 74, 255, 0.5);
+            color: var(--glow-purple);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: var(--neon-purple);
+            color: #fff;
+            box-shadow: 0 0 15px var(--neon-purple);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 1.8rem 1.5rem;
+        }
+
+        .modal-body p {
+            color: #ddd;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .modal-insta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 1.3rem;
+            padding: 0.7rem 1.6rem;
+            background: linear-gradient(135deg, var(--neon-purple), var(--electric-purple));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(177, 74, 255, 0.4);
+        }
+
+        .modal-insta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(177, 74, 255, 0.7);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(177, 74, 255, 0.3);
+        }
+
+        footer p {
+            color: #ccc;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) {
+            .holo-scene {
+                min-height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                padding: 2rem 0;
+            }
+            .holo-center { position: static; transform: none; animation: none; }
+            .holo-window { position: static; width: 100%; max-width: 400px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
+            .nav-container {
+                position: fixed;
+                bottom: 20px;
+                right: 50%;
+                transform: translateX(50%);
+                top: auto;
+            }
+            .nav-button { flex-direction: row; }
+            .nav-btn { width: 40px; height: 40px; }
+            .nav-btn span { display: none; }
+            #sobre-mi { background-attachment: scroll; }
+        }
+	@media (max-height: 800px) {
+   	 .photo-frame { width: 180px; height: 180px; }
+    	.holo-scene { min-height: 640px; }
+    	#sobre-mi { padding: 50px 0; }
+	}
+    </style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <div class="nav-button">
+            <a href="#hero" class="nav-btn">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#sobre-mi" class="nav-btn">
+                <i class="fas fa-user"></i>
+                <span>Sobre Mí</span>
+            </a>
+            <a href="#portafolio" class="nav-btn">
+                <i class="fas fa-briefcase"></i>
+                <span>Portafolio</span>
+            </a>
+            <a href="#negocio" class="nav-btn">
+                <i class="fas fa-rocket"></i>
+                <span>Negocio</span>
+            </a>
+            <a href="#contacto" class="nav-btn">
+                <i class="fas fa-envelope"></i>
+                <span>Contacto</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+        <div class="hero-content">
+            <h1 class="hero-title">LEONELA TAPIAS</h1>
+            <p class="hero-subtitle">Desarrolladora Frontend & UX Designer</p>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('sobre-mi').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi">
+        <div class="container">
+            <h2 class="section-title fade-in">SOBRE MÍ</h2>
+            <div class="holo-scene fade-in">
+                <div class="holo-center">
+                    <div class="photo-frame">
+                        <div class="photo-ring"></div>
+                        <div class="photo-ring ring-2"></div>
+                        <img src="https://smarttradingsystems.net/imagen/Leonela.jpg" alt="Leonela Tapias">
+                    </div>
+                    <h3 class="holo-name">Leonela Rodríguez De Tapias</h3>
+                    <p class="holo-tagline">Desarrolladora Frontend | UX/UI | Marketing Digital</p>
+                    <p class="holo-quote">"Creo experiencias digitales modernas, funcionales y centradas en el usuario."</p>
+                    <p class="mini-label">Mis Intereses</p>
+                    <div class="hex-mini-row">
+                        <div class="hex-mini-wrap" data-tip="Viajar">
+                            <div class="hex-mini" data-modal="modal-viajar">
+                                <div class="hex-mini-inner"><i class="fas fa-umbrella-beach"></i></div>
+                            </div>
+                        </div>
+                        <div class="hex-mini-wrap" data-tip="Arte">
+                            <div class="hex-mini" data-modal="modal-arte">
+                                <div class="hex-mini-inner"><i class="fas fa-palette"></i></div>
+                            </div>
+                        </div>
+                        <div class="hex-mini-wrap" data-tip="Patinar">
+                            <div class="hex-mini" data-modal="modal-patinar">
+                                <div class="hex-mini-inner"><i class="fas fa-person-skating"></i></div>
+                            </div>
+                        </div>
+                        <div class="hex-mini-wrap" data-tip="Gratitud">
+                            <div class="hex-mini" data-modal="modal-gratitud">
+                                <div class="hex-mini-inner"><i class="fas fa-spa"></i></div>
+                            </div>
+                        </div>
+                        <div class="hex-mini-wrap" data-tip="Lectura">
+                            <div class="hex-mini" data-modal="modal-lectura">
+                                <div class="hex-mini-inner"><i class="fas fa-book-open"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="holo-window win-1">
+                    <div class="win-header">
+                        <i class="fas fa-code"></i> Frontend
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="win-body">
+                        <div class="stat-row"><span><i class="fab fa-html5"></i> HTML5</span><span>85%</span></div>
+                        <div class="mini-bar"><div style="width:85%"></div></div>
+                        <div class="stat-row"><span><i class="fab fa-css3-alt"></i> CSS3</span><span>80%</span></div>
+                        <div class="mini-bar"><div style="width:80%"></div></div>
+                        <div class="stat-row"><span><i class="fab fa-js"></i> JavaScript</span><span>70%</span></div>
+                        <div class="mini-bar"><div style="width:70%"></div></div>
+                        <div class="stat-row"><span>📱 Responsive</span><span>90%</span></div>
+                        <div class="mini-bar"><div style="width:90%"></div></div>
+                    </div>
+                </div>
+
+                <div class="holo-window win-2">
+                    <div class="win-header">
+                        <i class="fas fa-pen-nib"></i> UX / UI
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="win-body">
+                        <div class="icon-grid">
+                            <div><i class="fas fa-mobile-alt"></i><span>Mobile First</span></div>
+                            <div><i class="fas fa-universal-access"></i><span>Accesible</span></div>
+                            <div><i class="fas fa-eye"></i><span>UI Visual</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="holo-window win-3">
+                    <div class="win-header">
+                        <i class="fas fa-chart-line"></i> Marketing
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="win-body">
+                        <div class="mini-chart">
+                            <i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:85%"></i><i style="height:100%"></i>
+                        </div>
+                        <div class="stat-row"><span>@tapiasmarketing</span><span style="color:var(--neon-purple)">📈</span></div>
+                    </div>
+                </div>
+
+                <div class="holo-window win-4">
+                    <div class="win-header">
+                        <i class="fas fa-brain"></i> Skills
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="win-body">
+                        <div class="stat-row"><span>💬 Comunicación</span><span>95%</span></div>
+                        <div class="mini-bar"><div style="width:95%"></div></div>
+                        <div class="stat-row"><span>💡 Creatividad</span><span>90%</span></div>
+                        <div class="mini-bar"><div style="width:90%"></div></div>
+                        <div class="stat-row"><span>🎯 Dedicación</span><span>100%</span></div>
+                        <div class="mini-bar"><div style="width:100%"></div></div>
+                    </div>
+                </div>
+
+                <div class="holo-window win-5">
+                    <div class="win-header">
+                        <i class="fas fa-map-marker-alt"></i> Contacto
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="win-body">
+                        <div class="stat-row"><span>📍 Mérida, Venezuela</span></div>
+                        <div class="status-badge"><span class="status-dot"></span> Disponible para proyectos</div>
+                        <div class="win-social">
+                            <a href="https://github.com/Leonelarodri" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/leonelatapias/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/tapiasmarketing/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portafolio">
+        <div class="container">
+            <h2 class="section-title fade-in">PORTAFOLIO</h2>
+            <div class="portfolio-grid">
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tapias Marketing</h3>
+                        <p>Plataforma de marketing digital enfocada en transformar mentalidades y multiplicar ingresos. Diseño limpio y funcional con enfoque en conversión.</p>
+                        <a href="https://github.com/Leonelarodri/tapiasmarketing" class="project-link" target="_blank">
+                            Ver Proyecto <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Diario de Manifestación</h3>
+                        <p>Aplicación web para diario de gratitud y manifestación personal. Interfaz intuitiva y diseño centrado en la experiencia del usuario.</p>
+                        <a href="https://github.com/Leonelarodri/manifestacion" class="project-link" target="_blank">
+                            Ver Proyecto <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Taty's Coquette</h3>
+                        <p>Sitio web para tienda de moda con diseño atractivo y responsive. Enfoque en experiencia de compra fluida y visualmente atractiva.</p>
+                        <a href="https://github.com/Leonelarodri/tatys-coquette" class="project-link" target="_blank">
+                            Ver Proyecto <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Section -->
+    <section id="negocio">
+        <div class="container">
+            <h2 class="section-title fade-in">MI NEGOCIO</h2>
+            <div class="business-card fade-in">
+                <div class="business-card-content">
+                    <h3>TAPIAS MARKETING</h3>
+                    <p>Transformando mentalidades, multiplicando ingresos. Servicios de marketing digital para emprendedores y pequeñas empresas.</p>
+                    <a href="https://www.instagram.com/tapiasmarketing/" class="business-btn" target="_blank">
+                        <i class="fab fa-instagram"></i> Sígueme en Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto">
+        <div class="container">
+            <h2 class="section-title fade-in">CONTACTO</h2>
+            <div class="contact-container fade-in">
+                <p style="font-size: 1.2rem; color: #e0e0e0; margin-bottom: 2rem;">¿Interesada en colaborar o tienes alguna oportunidad de trabajo? ¡No dudes en contactarme!</p>
+                <div class="social-links">
+                    <a href="https://github.com/Leonelarodri" class="social-btn" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/leonelatapias/" class="social-btn" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tapiasmarketing/" class="social-btn" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:leonela.tapias@gmail.com" class="social-btn" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div class="holo-modal" id="modal-viajar">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-umbrella-beach"></i>
+                <h3>VIAJAR</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Explorar las costas de Venezuela es mi forma de reconectar con la naturaleza y con lo que realmente importa. Junto a mi esposo y a bordo de nuestra kombi "La Bonita", hemos recorrido Cuyagua, Patanemo y Cabo San Román. Cada ruta me enseña a disfrutar el proceso y me devuelve con la creatividad y la perspectiva fresca que aplico en mi trabajo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="holo-modal" id="modal-arte">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-palette"></i>
+                <h3>ARTE</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Crear arte es mi estado de flow: ese espacio donde desconecto de lo cotidiano y regreso con ideas frescas. Bajo el nombre @icoostudioart, transformo materiales industriales en piezas con alma. Esa capacidad de ver potencial donde otros ven límites define mi arte y mi forma de diseñar experiencias digitales.</p>
+                <a href="https://www.instagram.com/icoostudioart/" target="_blank" class="modal-insta">
+                    <i class="fab fa-instagram"></i> @icoostudioart
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="holo-modal" id="modal-patinar">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-person-skating"></i>
+                <h3>PATINAR</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Lo que empezó como una forma de compartir el hobby de mi esposo se convirtió en una pasión propia. Patinar me enseñó que el crecimiento sucede fuera de la zona de confort: equilibrio, paciencia y alegría por avanzar paso a paso. Porque en los patines, como en cada proyecto, lo importante es levantarse cada vez que se cae.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="holo-modal" id="modal-gratitud">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-spa"></i>
+                <h3>GRATITUD</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Practicar gratitud a diario fue el spark que encendió mi mente y me llevó a dedicarme a lo que realmente amo. Agradecer mi presente y visualizar el futuro que quiero vivir me dio claridad y propósito. Esa mentalidad es la que llevo a cada proyecto: enfoque, gratitud y visión de abundancia.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="holo-modal" id="modal-lectura">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-book-open"></i>
+                <h3>LECTURA</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Leer se ha convertido en una pasión que transformó mi vida. A través de los libros amplié mi mundo, me reconecté conmigo misma y aprendí a observar primero el porqué de mis emociones para comprender mis acciones. Hoy la lectura es mi espacio de autoconocimiento y crecimiento constante.</p>
+                <p style="margin-top: 1rem; color: var(--glow-purple); font-size: 0.85rem;">
+                    📖 <strong>Autores que me inspiran:</strong> Marian Rojas Estapé, Mario Alonso Puig y Tony Robbins.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Leonela Tapias. Todos los derechos reservados.</p>
+        <p>Desarrollado con 💜 en Mérida, Venezuela</p>
+    </footer>
+
+    <script>
+        // Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Scroll animations
+        function handleScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                if (elementTop < window.innerHeight && elementBottom > 0) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Matrix Effect
+        function initMatrix() {
+            const canvas = document.getElementById('matrixCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            function resizeCanvas() {
+                const hero = document.querySelector('.hero');
+                canvas.width = hero.offsetWidth;
+                canvas.height = hero.offsetHeight;
+            }
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            const fontSize = 16;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+            
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.random() * -100;
+            }
+            
+            const chars = '01010101010101010101010101010101010101';
+            
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(15, 5, 25, 0.08)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#b14aff';
+                ctx.font = fontSize + 'px monospace';
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const char = chars[Math.floor(Math.random() * chars.length)];
+                    const x = i * fontSize;
+                    const y = drops[i] * fontSize;
+                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = '#b14aff';
+                    ctx.fillText(char, x, y);
+                    ctx.shadowBlur = 0;
+                    
+                    if (y > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            setInterval(drawMatrix, 50);
+        }
+
+        // Modals
+        document.querySelectorAll('[data-modal]').forEach(card => {
+            card.addEventListener('click', () => {
+                const modal = document.getElementById(card.dataset.modal);
+                if (modal) modal.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.modal-close').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.closest('.holo-modal').classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('.holo-modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.remove('active');
+            });
+        });
+
+        // Initialize
+        window.addEventListener('load', () => {
+            createParticles();
+            handleScroll();
+            initMatrix();
+        });
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
+</body>
+</html>
