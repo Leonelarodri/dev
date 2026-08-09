@@ -1546,6 +1546,87 @@ img { max-width: 100%; }
     /* El footer respira sin botones encima */
     footer { padding-bottom: 3rem; }
 }
+/* ===== FOOTER FINITO EN MÓVIL ===== */
+@media (max-width: 768px) {
+    footer {
+        padding: 1.2rem 1rem 1rem;
+    }
+
+    footer p {
+        font-size: 0.62rem;
+        color: #999;
+        margin-bottom: 0.25rem;
+        letter-spacing: 0.5px;
+    }
+}
+/* ===== NOMBRE MÁS SEPARADO DEL CÍRCULO ===== */
+.photo-frame {
+    margin: 0 auto 3rem;
+}
+
+@media (max-width: 768px) {
+    .photo-frame {
+        margin-bottom: 2.5rem;
+    }
+}
+/* ===== BARRAS QUE SE CARGAN SOLAS ===== */
+.holo-scene .mini-bar div {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 2.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Cuando la sección aparece en pantalla, las barras crecen */
+.holo-scene.visible .mini-bar div {
+    transform: scaleX(1);
+}
+
+/* Cascada: cada ventana carga con su propio ritmo */
+.holo-scene.visible .win-1 .mini-bar div { transition-delay: 0.2s; }
+.holo-scene.visible .win-4 .mini-bar div { transition-delay: 0.4s; }
+.holo-scene.visible .win-6 .mini-bar div { transition-delay: 0.6s; }
+/* Barras y números terminan al mismo tiempo */
+.holo-scene .mini-bar div {
+    transition: transform 2.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+/* ===== MANITO DE TOUR POR LOS INTERESES ===== */
+.tap-hand {
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.95rem;
+    color: #fff;
+    text-shadow: 0 0 12px var(--neon-purple);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 6;
+    animation: handTour 10s linear infinite;
+}
+
+.hex-mini-wrap:nth-child(1) .tap-hand { animation-delay: 0s; }
+.hex-mini-wrap:nth-child(2) .tap-hand { animation-delay: 2s; }
+.hex-mini-wrap:nth-child(3) .tap-hand { animation-delay: 4s; }
+.hex-mini-wrap:nth-child(4) .tap-hand { animation-delay: 6s; }
+.hex-mini-wrap:nth-child(5) .tap-hand { animation-delay: 8s; }
+
+@keyframes handTour {
+    0%   { opacity: 0; transform: translateX(-50%) translateY(5px); }
+    4%   { opacity: 1; transform: translateX(-50%) translateY(0); }
+    16%  { opacity: 1; transform: translateX(-50%) translateY(-2px); }
+    20%  { opacity: 0; transform: translateX(-50%) translateY(5px); }
+    100% { opacity: 0; }
+}
+/* ===== MANITO ABAJO, TOCANDO EL HEXÁGONO ===== */
+.tap-hand {
+    top: auto;
+    bottom: -14px;
+}
+
+/* El tooltip baja un poco para no chocar con la manito */
+.hex-mini-wrap::after {
+    bottom: -46px;
+}
     </style>
 </head>
 <body>
@@ -1601,33 +1682,38 @@ img { max-width: 100%; }
                     <p class="holo-tagline">Desarrolladora Frontend | UX/UI | Marketing Digital</p>
                     <p class="holo-quote">"Creo experiencias digitales modernas, funcionales y centradas en el usuario."</p>
                     <p class="mini-label">Mis Intereses</p>
-                    <div class="hex-mini-row">
-                        <div class="hex-mini-wrap" data-tip="Viajar">
-                            <div class="hex-mini" data-modal="modal-viajar">
-                                <div class="hex-mini-inner"><i class="fas fa-umbrella-beach"></i></div>
-                            </div>
-                        </div>
-                        <div class="hex-mini-wrap" data-tip="Arte">
-                            <div class="hex-mini" data-modal="modal-arte">
-                                <div class="hex-mini-inner"><i class="fas fa-palette"></i></div>
-                            </div>
-                        </div>
-                        <div class="hex-mini-wrap" data-tip="Patinar">
-                            <div class="hex-mini" data-modal="modal-patinar">
-                                <div class="hex-mini-inner"><i class="fas fa-person-skating"></i></div>
-                            </div>
-                        </div>
-                        <div class="hex-mini-wrap" data-tip="Gratitud">
-                            <div class="hex-mini" data-modal="modal-gratitud">
-                                <div class="hex-mini-inner"><i class="fas fa-spa"></i></div>
-                            </div>
-                        </div>
-                        <div class="hex-mini-wrap" data-tip="Lectura">
-                            <div class="hex-mini" data-modal="modal-lectura">
-                                <div class="hex-mini-inner"><i class="fas fa-book-open"></i></div>
-                            </div>
-                        </div>
-                    </div>
+                   <div class="hex-mini-row">
+    <div class="hex-mini-wrap" data-tip="Viajar">
+        <i class="fas fa-hand-pointer tap-hand"></i>
+        <div class="hex-mini" data-modal="modal-viajar">
+            <div class="hex-mini-inner"><i class="fas fa-umbrella-beach"></i></div>
+        </div>
+    </div>
+    <div class="hex-mini-wrap" data-tip="Arte">
+        <i class="fas fa-hand-pointer tap-hand"></i>
+        <div class="hex-mini" data-modal="modal-arte">
+            <div class="hex-mini-inner"><i class="fas fa-palette"></i></div>
+        </div>
+    </div>
+    <div class="hex-mini-wrap" data-tip="Patinar">
+        <i class="fas fa-hand-pointer tap-hand"></i>
+        <div class="hex-mini" data-modal="modal-patinar">
+            <div class="hex-mini-inner"><i class="fas fa-person-skating"></i></div>
+        </div>
+    </div>
+    <div class="hex-mini-wrap" data-tip="Gratitud">
+        <i class="fas fa-hand-pointer tap-hand"></i>
+        <div class="hex-mini" data-modal="modal-gratitud">
+            <div class="hex-mini-inner"><i class="fas fa-spa"></i></div>
+        </div>
+    </div>
+    <div class="hex-mini-wrap" data-tip="Lectura">
+        <i class="fas fa-hand-pointer tap-hand"></i>
+        <div class="hex-mini" data-modal="modal-lectura">
+            <div class="hex-mini-inner"><i class="fas fa-book-open"></i></div>
+        </div>
+    </div>
+</div>
                 </div>
 
                 <!-- VENTANA 1: FRONTEND -->
@@ -1898,16 +1984,15 @@ img { max-width: 100%; }
                 <button class="modal-close">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Crear arte es mi estado de flow, en @icoostudioart, transformo materiales industriales en piezas con alma, es ese espacio donde desconecto de lo cotidiano y regreso con ideas nuevas para diseñar experiencias digitales.</p>
+                <p>Crear arte es mi estado de flow, en @icoostudioart, transformo materiales industriales en piezas con alma, me encanta crear diseños de Volkswagen personalizados y únicos, es ese espacio donde desconecto de lo cotidiano y regreso con ideas nuevas para diseñar experiencias digitales.</p>
 <pre class="ascii-art">
-                 .-.-.
-                 '. .'
-                   '
-      ______             ______
-     /|_||_\`.__        /|_||_\`.__
-    (   _    _ _\      (   _    _ _\
-    =`-(_)--(_)-'      =`-(_)--(_)-' 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                         ____________________ 
+       .-***--.         / = |    |   / |  | \  .
+      /       _ \ .     |  = |____|  /__|__|  \|
+   /_| |..|  |_..\|_    |         |            |
+  ( _              _)   |    _    |       _    |
+ =`-(_)--------(_)-'    `---(_)----------(_)--' 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 </pre>
                 <a href="https://www.instagram.com/icoostudioart/" target="_blank" class="modal-insta">
                     <i class="fab fa-instagram"></i> @icoostudioart
@@ -1974,18 +2059,18 @@ img { max-width: 100%; }
                     📖 <strong>Autores que me inspiran:</strong> Marian Rojas Estapé, Mario Alonso Puig y Tony Robbins.
                 </p>
 <pre class="ascii-art">
- _________________________   ___________________________
--/|                         \/                         |\-
-|||  La magia de leer       ||  --------------------   |||
-|||  --------------------   ||  --------------------   |||
-|||  ....................   ||  ....................   |||
-|||  ....................   ||  ....................   |||
-|||  ....................   ||  ....................   |||
-|||  ....................   ||  ya no puedes volver    |||
-|||  ....................   ||  ...a ser quien eras.   |||
-|||_________________________||_________________________|||
-|/==========================\/==========================\|
-----------------------------~--~-------------------------'
+  _______________________    ______________________
+-/|                       \/                       |\-
+|||  La magia de leer     || --------------------  |||
+|||  -------------------- || --------------------  |||
+|||  .................... || ....................  |||
+|||  .................... || ....................  |||
+|||  .................... || ....................  |||
+|||  .................... || ya no puedes volver   |||
+|||  .................... || ...a ser quien eras.  |||
+|||_______________________||_______________________|||
+|/========================\/========================\|
+---------------------------~-~-----------------------'
 </pre>
             </div>
         </div>
@@ -2177,12 +2262,57 @@ function initNetwork() {
     }
     draw();
 }
+// ===== PORCENTAJES CON EFECTO TRAGAMONEDAS =====
+function initCounters() {
+    const scene = document.querySelector('.holo-scene');
+    if (!scene) return;
+
+    const items = [];
+    scene.querySelectorAll('.stat-row span:last-child').forEach(el => {
+        const m = el.textContent.match(/(\d+)\s*%/);
+        if (m) items.push({ el, target: +m[1] });
+    });
+    if (!items.length) return;
+
+    let started = false;
+    const DURATION = 2500;
+
+    function start() {
+        if (started) return;
+        started = true;
+        const t0 = performance.now();
+        let last = 0;
+
+        function tick(now) {
+            const p = Math.min((now - t0) / DURATION, 1);
+
+            if (now - last > 60 || p === 1) {
+                last = now;
+                items.forEach(it => {
+                    it.el.textContent = p === 1
+                        ? it.target + '%'
+                        : Math.floor(Math.random() * 100) + '%';
+                });
+            }
+            if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+
+    const obs = new IntersectionObserver(es => {
+        es.forEach(e => {
+            if (e.isIntersecting) { start(); obs.disconnect(); }
+        });
+    }, { threshold: 0.25 });
+    obs.observe(scene);
+}
         // Initialize
         window.addEventListener('load', () => {
             createParticles();
             handleScroll();
             initMatrix();
 	    initNetwork();
+	    initCounters();
         });
 
         window.addEventListener('scroll', handleScroll);
