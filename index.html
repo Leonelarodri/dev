@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leonela Tapias | Desarrolladora Frontend & UX</title>
-    <link rel="icon" type="image/png" href="https://smarttradingsystems.net/imagen/LogoLTmini.png">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -32,13 +31,6 @@
             position: relative;
         }
 
-        /* ===== REGLA GLOBAL ANTI-DISTORSIÓN DE IMÁGENES ===== */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
         /* ===== PARTICLES BACKGROUND ===== */
         .particles {
             position: fixed;
@@ -61,10 +53,16 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
             10% { opacity: 1; }
             90% { opacity: 1; }
-            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
         }
 
         /* ===== ANIMATED GRADIENT BACKGROUND ===== */
@@ -110,9 +108,18 @@
         }
 
         @keyframes subtleMovement {
-            0% { background-size: 100% 100%; background-position: center center; }
-            50% { background-size: 105% 105%; background-position: 45% 55%; }
-            100% { background-size: 102% 102%; background-position: 55% 45%; }
+            0% {
+                background-size: 100% 100%;
+                background-position: center center;
+            }
+            50% {
+                background-size: 105% 105%;
+                background-position: 45% 55%;
+            }
+            100% {
+                background-size: 102% 102%;
+                background-position: 55% 45%;
+            }
         }
 
         .hero::before {
@@ -122,7 +129,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(15, 5, 25, 0.7) 0%, rgba(91, 33, 182, 0.5) 50%, rgba(15, 5, 25, 0.7) 100%);
+            background: linear-gradient(135deg,
+                rgba(15, 5, 25, 0.7) 0%,
+                rgba(91, 33, 182, 0.5) 50%,
+                rgba(15, 5, 25, 0.7) 100%);
             z-index: 0;
         }
 
@@ -140,7 +150,6 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            padding: 0 20px;
         }
 
         .hero-title {
@@ -176,8 +185,14 @@
         }
 
         @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-            from { opacity: 0; transform: translateY(30px); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
         }
 
         .scroll-indicator {
@@ -193,7 +208,9 @@
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
             40% { transform: translateY(-20px) translateX(-50%); }
             60% { transform: translateY(-10px) translateX(-50%); }
         }
@@ -258,8 +275,14 @@
             box-shadow: 0 0 30px var(--neon-purple);
         }
 
-        .nav-btn:hover::before { opacity: 1; }
-        .nav-btn i { font-size: 1.2rem; z-index: 1; }
+        .nav-btn:hover::before {
+            opacity: 1;
+        }
+
+        .nav-btn i {
+            font-size: 1.2rem;
+            z-index: 1;
+        }
 
         .nav-btn span {
             position: absolute;
@@ -275,7 +298,10 @@
             border: 1px solid var(--neon-purple);
         }
 
-        .nav-btn:hover span { opacity: 1; transform: translateX(0); }
+        .nav-btn:hover span {
+            opacity: 1;
+            transform: translateX(0);
+        }
 
         /* ===== SECTIONS ===== */
         section {
@@ -290,8 +316,9 @@
             text-align: center;
             margin-bottom: 4rem;
             position: relative;
-            display: block;
-            width: 100%;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .section-title::after {
@@ -307,8 +334,14 @@
         }
 
         @keyframes glow {
-            0%, 100% { opacity: 0.5; width: 100px; }
-            50% { opacity: 1; width: 150px; }
+            0%, 100% {
+                opacity: 0.5;
+                width: 100px;
+            }
+            50% {
+                opacity: 1;
+                width: 150px;
+            }
         }
 
         /* ===== ABOUT SECTION ===== */
@@ -321,7 +354,10 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(15, 5, 25, 0.95) 0%, rgba(15, 5, 25, 0.75) 50%, rgba(15, 5, 25, 0.95) 100%);
+            background: linear-gradient(180deg,
+                rgba(15, 5, 25, 0.95) 0%,
+                rgba(15, 5, 25, 0.75) 50%,
+                rgba(15, 5, 25, 0.95) 100%);
             z-index: 0;
             pointer-events: none;
         }
@@ -333,7 +369,12 @@
             width: 100%;
             height: 140px;
             top: -20%;
-            background: linear-gradient(180deg, transparent, rgba(177, 74, 255, 0.12), rgba(216, 180, 254, 0.35), rgba(177, 74, 255, 0.12), transparent);
+            background: linear-gradient(180deg,
+                transparent,
+                rgba(177, 74, 255, 0.12),
+                rgba(216, 180, 254, 0.35),
+                rgba(177, 74, 255, 0.12),
+                transparent);
             border-bottom: 2px solid rgba(216, 180, 254, 0.4);
             box-shadow: 0 5px 25px rgba(177, 74, 255, 0.4);
             animation: scanLine 7s linear infinite;
@@ -385,7 +426,7 @@
             position: relative;
             width: 260px;
             height: 260px;
-            margin: 0 auto 3rem; /* Separación del nombre */
+            margin: 0 auto 1.5rem;
         }
 
         .photo-frame img {
@@ -395,7 +436,8 @@
             object-position: center top;
             border-radius: 50%;
             border: 3px solid transparent;
-            box-shadow: 0 0 40px rgba(177, 74, 255, 0.6), inset 0 0 20px rgba(177, 74, 255, 0.3);
+            box-shadow: 0 0 40px rgba(177, 74, 255, 0.6),
+                        inset 0 0 20px rgba(177, 74, 255, 0.3);
             position: relative;
             z-index: 2;
         }
@@ -508,7 +550,7 @@
         .hex-mini-wrap::after {
             content: attr(data-tip);
             position: absolute;
-            bottom: -46px;
+            bottom: -26px;
             left: 50%;
             transform: translateX(-50%) scale(0);
             background: rgba(0, 0, 0, 0.9);
@@ -523,39 +565,13 @@
             z-index: 5;
         }
 
-        .hex-mini-wrap:hover::after { transform: translateX(-50%) scale(1); }
+        .hex-mini-wrap:hover::after {
+            transform: translateX(-50%) scale(1);
+        }
 
         @keyframes hexFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-12px); }
-        }
-
-        .tap-hand {
-            position: absolute;
-            bottom: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.95rem;
-            color: #fff;
-            text-shadow: 0 0 12px var(--neon-purple);
-            opacity: 0;
-            pointer-events: none;
-            z-index: 6;
-            animation: handTour 10s linear infinite;
-        }
-
-        .hex-mini-wrap:nth-child(1) .tap-hand { animation-delay: 0s; }
-        .hex-mini-wrap:nth-child(2) .tap-hand { animation-delay: 2s; }
-        .hex-mini-wrap:nth-child(3) .tap-hand { animation-delay: 4s; }
-        .hex-mini-wrap:nth-child(4) .tap-hand { animation-delay: 6s; }
-        .hex-mini-wrap:nth-child(5) .tap-hand { animation-delay: 8s; }
-
-        @keyframes handTour {
-            0% { opacity: 0; transform: translateX(-50%) translateY(5px); }
-            4% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            16% { opacity: 1; transform: translateX(-50%) translateY(-2px); }
-            20% { opacity: 0; transform: translateX(-50%) translateY(5px); }
-            100% { opacity: 0; }
         }
 
         /* ===== HOLOGRAPHIC WINDOWS ===== */
@@ -607,6 +623,7 @@
 
         .win-dots { margin-left: auto; display: flex; gap: 4px; }
         .win-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--neon-purple); opacity: 0.7; }
+
         .win-body { padding: 1rem; }
 
         .mini-bar {
@@ -622,15 +639,7 @@
             background: linear-gradient(90deg, var(--electric-purple), var(--neon-purple));
             border-radius: 3px;
             box-shadow: 0 0 10px var(--neon-purple);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 2.5s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-
-        .holo-scene.visible .mini-bar div { transform: scaleX(1); }
-        .holo-scene.visible .win-1 .mini-bar div { transition-delay: 0.2s; }
-        .holo-scene.visible .win-4 .mini-bar div { transition-delay: 0.4s; }
-        .holo-scene.visible .win-6 .mini-bar div { transition-delay: 0.6s; }
 
         .stat-row {
             display: flex;
@@ -672,23 +681,37 @@
 
         .status-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: #8effc1; margin-bottom: 0.6rem; }
         .status-dot {
-            width: 8px; height: 8px; border-radius: 50%; background: #22c55e;
-            box-shadow: 0 0 10px #22c55e; animation: blink 1.5s infinite;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 10px #22c55e;
+            animation: blink 1.5s infinite;
         }
 
         @keyframes blink { 50% { opacity: 0.4; } }
 
         .win-social { display: flex; gap: 0.8rem; justify-content: center; margin-top: 0.6rem; }
         .win-social a {
-            width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--neon-purple);
-            display: flex; align-items: center; justify-content: center; color: var(--glow-purple); transition: 0.3s;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid var(--neon-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--glow-purple);
+            transition: 0.3s;
         }
 
         .win-social a:hover {
-            background: var(--neon-purple); color: #fff; box-shadow: 0 0 15px var(--neon-purple); transform: translateY(-3px);
+            background: var(--neon-purple);
+            color: #fff;
+            box-shadow: 0 0 15px var(--neon-purple);
+            transform: translateY(-3px);
         }
 
-        /* ===== PORTFOLIO ===== */
+        /* ===== PORTFOLIO===== */
         .cases-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -716,360 +739,813 @@
         }
 
         .case-header { padding: 2rem 2rem 1rem; }
-        .case-badge {
-            display: inline-block; font-size: 0.65rem; letter-spacing: 2px; padding: 0.35rem 0.9rem;
-            border-radius: 20px; border: 1px solid var(--neon-purple); color: var(--glow-purple);
-            background: rgba(177, 74, 255, 0.15); margin-bottom: 1rem; text-transform: uppercase;
-        }
-        .case-title { font-family: 'Orbitron', sans-serif; font-size: 1.6rem; color: #fff; margin-bottom: 0.4rem; }
-        .case-quote { color: var(--glow-purple); font-style: italic; font-size: 0.9rem; }
-        .case-subtitle { padding: 0 2rem; color: var(--glow-purple); font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 0.8rem; }
-        .case-features { list-style: none; padding: 1rem 2rem 0; margin: 0; }
-        .case-features li {
-            display: flex; gap: 0.6rem; align-items: flex-start; color: #ccc; font-size: 0.85rem;
-            margin-bottom: 0.7rem; line-height: 1.5;
-        }
-        .case-features li i { color: var(--neon-purple); margin-top: 0.2rem; text-shadow: 0 0 10px var(--neon-purple); }
-        .case-features li strong { color: #fff; }
-        .case-highlight {
-            margin: 0.5rem 2rem 1.5rem; padding: 0.8rem 1rem; border-radius: 12px;
-            background: linear-gradient(90deg, rgba(177, 74, 255, 0.25), rgba(124, 58, 237, 0.1));
-            border: 1px solid rgba(177, 74, 255, 0.4); font-size: 0.8rem; color: #fff; text-align: center;
-        }
-        .case-links { margin-top: auto; display: flex; gap: 1rem; padding: 0 2rem 2rem; flex-wrap: wrap; }
-        .project-link {
-            display: inline-flex; align-items: center; gap: 0.5rem; color: var(--neon-purple);
-            text-decoration: none; font-weight: 600; padding: 0.8rem 1.5rem; background: rgba(177, 74, 255, 0.2);
-            border-radius: 50px; border: 1px solid var(--neon-purple); transition: all 0.3s; position: relative; overflow: hidden;
-        }
-        .project-link::before {
-            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); transition: left 0.5s;
-        }
-        .project-link:hover {
-            background: var(--neon-purple); color: white; transform: translateX(5px); box-shadow: 0 10px 30px rgba(177, 74, 255, 0.5);
-        }
-        .project-link:hover::before { left: 100%; }
 
+        .case-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            border: 1px solid var(--neon-purple);
+            color: var(--glow-purple);
+            background: rgba(177, 74, 255, 0.15);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .case-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+
+        .case-quote {
+            color: var(--glow-purple);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .case-subtitle {
+            padding: 0 2rem;
+            color: var(--glow-purple);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-features {
+            list-style: none;
+            padding: 1rem 2rem 0;
+            margin: 0;
+        }
+
+        .case-features li {
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+            color: #ccc;
+            font-size: 0.85rem;
+            margin-bottom: 0.7rem;
+            line-height: 1.5;
+        }
+
+        .case-features li i {
+            color: var(--neon-purple);
+            margin-top: 0.2rem;
+            text-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        .case-features li strong {
+            color: #fff;
+        }
+
+        .case-highlight {
+            margin: 0.5rem 2rem 1.5rem;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            background: linear-gradient(90deg, rgba(177, 74, 255, 0.25), rgba(124, 58, 237, 0.1));
+            border: 1px solid rgba(177, 74, 255, 0.4);
+            font-size: 0.8rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .case-links {
+            margin-top: auto;
+            display: flex;
+            gap: 1rem;
+            padding: 0 2rem 2rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--neon-purple);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            background: rgba(177, 74, 255, 0.2);
+            border-radius: 50px;
+            border: 1px solid var(--neon-purple);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-link:hover {
+            background: var(--neon-purple);
+            color: white;
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(177, 74, 255, 0.5);
+        }
+
+        .project-link:hover::before {
+            left: 100%;
+        }
+
+        /* ===== PORTAFOLIO: FONDO CIRCUITO ANIMADO ===== */
         #portafolio {
             background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill='none' stroke='%23b14aff' stroke-opacity='.12' stroke-width='2'%3E%3Cpath d='M20 20h80v60h60'/%3E%3Cpath d='M20 140h40v80'/%3E%3Cpath d='M140 20v40h80'/%3E%3Cpath d='M240 160h-80v60'/%3E%3C/g%3E%3Cg fill='%23b14aff' fill-opacity='.2'%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3Ccircle cx='160' cy='80' r='4'/%3E%3Ccircle cx='60' cy='220' r='4'/%3E%3Ccircle cx='140' cy='20' r='4'/%3E%3Ccircle cx='220' cy='60' r='4'/%3E%3Ccircle cx='240' cy='160' r='4'/%3E%3Ccircle cx='160' cy='220' r='4'/%3E%3Ccircle cx='20' cy='140' r='4'/%3E%3C/g%3E%3C/svg%3E") repeat;
             overflow: hidden;
         }
+
         #portafolio::before {
-            content: ''; position: absolute; inset: 0;
+            content: '';
+            position: absolute;
+            inset: 0;
             background: radial-gradient(circle at center, rgba(15, 5, 25, 0.55) 0%, rgba(15, 5, 25, 0.9) 100%);
             pointer-events: none;
         }
-        .circuit-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-        .pulse {
-            position: absolute; height: 2px; width: 180px;
-            background: linear-gradient(90deg, transparent, var(--neon-purple), #fff, var(--neon-purple), transparent);
-            filter: drop-shadow(0 0 8px var(--neon-purple)); animation: runX 5s linear infinite; opacity: 0.7;
+
+        .circuit-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
         }
+
+        .pulse {
+            position: absolute;
+            height: 2px;
+            width: 180px;
+            background: linear-gradient(90deg, transparent, var(--neon-purple), #fff, var(--neon-purple), transparent);
+            filter: drop-shadow(0 0 8px var(--neon-purple));
+            animation: runX 5s linear infinite;
+            opacity: 0.7;
+        }
+
         .p1 { top: 12%; animation-duration: 4.5s; }
         .p2 { top: 32%; width: 120px; animation-duration: 6s; animation-delay: 1s; }
         .p3 { top: 55%; animation-duration: 5s; animation-delay: 2s; }
         .p4 { top: 78%; width: 220px; animation-duration: 7s; animation-delay: 0.5s; }
+
         .pulse.vertical {
-            width: 2px; height: 140px;
+            width: 2px;
+            height: 140px;
             background: linear-gradient(180deg, transparent, var(--neon-purple), #fff, var(--neon-purple), transparent);
             animation: runY 6s linear infinite;
         }
+
         .p5 { left: 18%; animation-duration: 6s; }
         .p6 { left: 82%; height: 180px; animation-duration: 7.5s; animation-delay: 1.5s; }
 
-        @keyframes runX { from { left: -250px; } to { left: 110%; } }
-        @keyframes runY { from { top: -200px; } to { top: 110%; } }
-
-        /* ===== NEGOCIO ===== */
-        #negocio { overflow: hidden; }
-        #negocio::before {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(180deg, rgba(15, 5, 25, 0.92) 0%, rgba(15, 5, 25, 0.8) 50%, rgba(15, 5, 25, 0.92) 100%);
-            z-index: 0; pointer-events: none;
+        @keyframes runX {
+            from { left: -250px; }
+            to { left: 110%; }
         }
-        .network-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 
-        .negocio-layout {
-            display: flex; align-items: center; justify-content: center; gap: 3rem; max-width: 1200px; margin: 0 auto;
+        @keyframes runY {
+            from { top: -200px; }
+            to { top: 110%; }
         }
+
+        /* ===== NEGOCIO: VENTANA TAPIAS MARKETING ===== */
         .biz-window {
-            flex: 0 1 480px; margin: 0; background: rgba(15, 5, 25, 0.8); backdrop-filter: blur(15px);
-            border: 1px solid rgba(177, 74, 255, 0.5); border-radius: 20px; overflow: hidden;
-            box-shadow: 0 0 60px rgba(177, 74, 255, 0.35); position: relative; animation: winFloat 7s ease-in-out infinite;
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(15, 5, 25, 0.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(177, 74, 255, 0.5);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(177, 74, 255, 0.35);
+            position: relative;
+            animation: winFloat 7s ease-in-out infinite;
         }
+
         .biz-header {
-            display: flex; align-items: center; gap: 0.6rem; padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 1.5rem;
             background: linear-gradient(90deg, rgba(177, 74, 255, 0.4), rgba(124, 58, 237, 0.15));
-            border-bottom: 1px solid rgba(177, 74, 255, 0.3); font-family: 'Orbitron', sans-serif;
-            letter-spacing: 2px; color: #fff; font-size: 0.9rem;
+            border-bottom: 1px solid rgba(177, 74, 255, 0.3);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            color: #fff;
+            font-size: 0.9rem;
         }
+
         .biz-header .win-dots { margin-left: auto; }
-        .biz-body { padding: 2.5rem 2rem; text-align: center; }
+
+        .biz-body {
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
         .biz-logo {
-            font-family: 'Orbitron', sans-serif; font-size: 2.2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
             background: linear-gradient(135deg, #fff, var(--glow-purple), var(--neon-purple));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.8rem;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.8rem;
         }
+
         .biz-team {
-            display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--glow-purple);
-            border: 1px solid rgba(177, 74, 255, 0.4); padding: 0.4rem 1rem; border-radius: 20px;
-            background: rgba(177, 74, 255, 0.12); margin-bottom: 1.4rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--glow-purple);
+            border: 1px solid rgba(177, 74, 255, 0.4);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: rgba(177, 74, 255, 0.12);
+            margin-bottom: 1.4rem;
         }
-        .biz-desc { color: #ccc; line-height: 1.7; max-width: 520px; margin: 0 auto 1.8rem; font-size: 0.95rem; }
-        .biz-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; }
+
+        .biz-desc {
+            color: #ccc;
+            line-height: 1.7;
+            max-width: 520px;
+            margin: 0 auto 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .biz-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
         .biz-tags span {
-            font-size: 0.7rem; padding: 0.3rem 0.8rem; border: 1px solid var(--neon-purple);
-            border-radius: 20px; color: #fff; background: rgba(177, 74, 255, 0.15);
+            font-size: 0.7rem;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--neon-purple);
+            border-radius: 20px;
+            color: #fff;
+            background: rgba(177, 74, 255, 0.15);
         }
+
         .business-btn {
-            display: inline-flex; align-items: center; gap: 1rem; padding: 1.2rem 3rem;
-            background: linear-gradient(135deg, var(--neon-purple), var(--electric-purple)); color: white;
-            text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s;
-            border: 2px solid transparent; box-shadow: 0 10px 30px rgba(177, 74, 255, 0.5);
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--neon-purple), var(--electric-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(177, 74, 255, 0.5);
         }
-        .business-btn:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 40px rgba(177, 74, 255, 0.7); border-color: #fff; }
-        .business-btn i { font-size: 1.5rem; }
 
-        .negocio-msg {
-            flex: 0 1 300px; text-align: center; color: #e0e0e0; font-size: 1.1rem; line-height: 1.7;
+        .business-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(177, 74, 255, 0.7);
+            border-color: #fff;
         }
-        .social-column { display: flex; flex-direction: column; gap: 1.5rem; }
+
+        .business-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
         .social-btn {
-            width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--cyber-purple), var(--neon-purple));
-            display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; text-decoration: none;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 3px solid transparent; position: relative; overflow: hidden;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cyber-purple), var(--neon-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
-        .social-btn::before {
-            content: ''; position: absolute; width: 100%; height: 100%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent); opacity: 0; transition: opacity 0.3s;
-        }
-        .social-btn:hover {
-            transform: translateY(-10px) rotate(360deg) scale(1.2); border-color: #fff; box-shadow: 0 20px 50px rgba(177, 74, 255, 0.7);
-        }
-        .social-btn:hover::before { opacity: 1; }
 
-        /* ===== MODALS ===== */
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-10px) rotate(360deg) scale(1.2);
+            border-color: #fff;
+            box-shadow: 0 20px 50px rgba(177, 74, 255, 0.7);
+        }
+
+        .social-btn:hover::before {
+            opacity: 1;
+        }
+
+        /* ===== HOLOGRAPHIC MODALS ===== */
         .holo-modal {
-            position: fixed; inset: 0; background: rgba(15, 5, 25, 0.85); backdrop-filter: blur(8px);
-            display: flex; align-items: center; justify-content: center; z-index: 2000;
-            opacity: 0; visibility: hidden; transition: all 0.4s; padding: 20px;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 5, 25, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            padding: 20px;
         }
-        .holo-modal.active { opacity: 1; visibility: visible; }
+
+        .holo-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
         .modal-content {
-            width: 100%; max-width: 540px; background: rgba(15, 5, 25, 0.97); border: 1px solid var(--neon-purple);
-            border-radius: 20px; box-shadow: 0 0 60px rgba(177, 74, 255, 0.5), inset 0 0 30px rgba(177, 74, 255, 0.08);
-            transform: scale(0.8) translateY(40px); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden; position: relative;
+            width: 100%;
+            max-width: 540px;
+            background: rgba(15, 5, 25, 0.97);
+            border: 1px solid var(--neon-purple);
+            border-radius: 20px;
+            box-shadow: 0 0 60px rgba(177, 74, 255, 0.5), inset 0 0 30px rgba(177, 74, 255, 0.08);
+            transform: scale(0.8) translateY(40px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            position: relative;
         }
-        .holo-modal.active .modal-content { transform: scale(1) translateY(0); }
+
+        .holo-modal.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
         .modal-content::before {
-            content: ''; position: absolute; left: 0; width: 100%; height: 60px; top: -20%;
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            top: -20%;
             background: linear-gradient(180deg, transparent, rgba(177, 74, 255, 0.15), transparent);
-            animation: scanLine 4s linear infinite; pointer-events: none;
+            animation: scanLine 4s linear infinite;
+            pointer-events: none;
         }
+
         .modal-header {
-            display: flex; align-items: center; gap: 0.8rem; padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 1.5rem;
             background: linear-gradient(90deg, rgba(177, 74, 255, 0.35), rgba(124, 58, 237, 0.1));
             border-bottom: 1px solid rgba(177, 74, 255, 0.3);
         }
-        .modal-header i { font-size: 1.5rem; color: var(--neon-purple); text-shadow: 0 0 15px var(--neon-purple); }
-        .modal-header h3 { font-family: 'Orbitron', sans-serif; color: #fff; letter-spacing: 2px; font-size: 1.1rem; }
-        .modal-close {
-            margin-left: auto; background: none; border: 1px solid rgba(177, 74, 255, 0.5); color: var(--glow-purple);
-            width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; transition: all 0.3s;
+
+        .modal-header i {
+            font-size: 1.5rem;
+            color: var(--neon-purple);
+            text-shadow: 0 0 15px var(--neon-purple);
         }
-        .modal-close:hover { background: var(--neon-purple); color: #fff; box-shadow: 0 0 15px var(--neon-purple); transform: rotate(90deg); }
-        .modal-body { padding: 1.8rem 1.5rem; }
-        .modal-body p { color: #ddd; line-height: 1.8; font-size: 0.95rem; }
+
+        .modal-header h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+        }
+
+        .modal-close {
+            margin-left: auto;
+            background: none;
+            border: 1px solid rgba(177, 74, 255, 0.5);
+            color: var(--glow-purple);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: var(--neon-purple);
+            color: #fff;
+            box-shadow: 0 0 15px var(--neon-purple);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 1.8rem 1.5rem;
+        }
+
+        .modal-body p {
+            color: #ddd;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
         .modal-insta {
-            display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1.3rem; padding: 0.7rem 1.6rem;
-            background: linear-gradient(135deg, var(--neon-purple), var(--electric-purple)); color: #fff;
-            text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.9rem; transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 1.3rem;
+            padding: 0.7rem 1.6rem;
+            background: linear-gradient(135deg, var(--neon-purple), var(--electric-purple));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
             box-shadow: 0 5px 20px rgba(177, 74, 255, 0.4);
         }
-        .modal-insta:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 30px rgba(177, 74, 255, 0.7); }
+
+        .modal-insta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(177, 74, 255, 0.7);
+        }
+
+        /* ===== ASCII ART ===== */
         .ascii-art {
-            margin-top: 1.2rem; padding: 1rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(177, 74, 255, 0.3);
-            border-radius: 10px; font-family: 'Courier New', monospace; font-size: 0.8rem; color: var(--glow-purple);
-            line-height: 1.4; text-align: left; white-space: pre; overflow-x: auto;
+            margin-top: 1.2rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(177, 74, 255, 0.3);
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: var(--glow-purple);
+            line-height: 1.4;
+            text-align: left;
+            white-space: pre;
+            overflow-x: auto;
         }
 
         /* ===== FOOTER ===== */
-        footer {
-            text-align: center; padding: 3rem 0; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);
+   footer {
+    text-align: center;
+    padding: 3rem 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+        footer p {
+            color: #ccc;
+            margin-bottom: 0.5rem;
         }
-        footer p { color: #ccc; margin-bottom: 0.5rem; }
 
         /* ===== SCROLL ANIMATIONS ===== */
         .fade-in {
-            opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* ==========================================================================
-           RESPONSIVE DESIGN (CONSOLIDADO Y OPTIMIZADO)
-           ========================================================================== */
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1100px) {
             .holo-scene {
-                min-height: auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding: 2rem 0;
+                min-height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                padding: 2rem 0;
             }
             .holo-center { position: static; transform: none; animation: none; }
             .holo-window { position: static; width: 100%; max-width: 400px; }
-            .negocio-layout { flex-direction: column; }
-            .social-column { flex-direction: row; }
         }
 
         @media (max-width: 768px) {
-            /* Prevenir scroll horizontal */
-            html, body { overflow-x: clip; }
-            section { overflow-x: clip; padding: 70px 0; }
-
-            /* Hero: Imagen de fondo centrada perfectamente en móvil */
-            .hero {
-                animation: none !important;
-                background: url('https://smarttradingsystems.net/imagen/FondoLeonela.jpg') center 35% / cover no-repeat !important;
-                background-attachment: scroll !important;
-                min-height: 100vh;
-            }
-            .hero::before,
-            .hero::after {
-                background: linear-gradient(135deg, 
-                    rgba(15, 5, 25, 0.85) 0%, 
-                    rgba(91, 33, 182, 0.7) 50%, 
-                    rgba(15, 5, 25, 0.9) 100%) !important;
-            }
-            .hero-title {
-                font-size: clamp(2rem, 9vw, 3.2rem) !important;
-                letter-spacing: 2px;
-                text-shadow: 0 0 30px rgba(177, 74, 255, 0.9), 
-                             0 0 60px rgba(0,0,0,0.8) !important;
-                line-height: 1.1 !important;
-            }
-            .hero-subtitle { 
-                font-size: 0.95rem !important; 
-                padding: 0 15px !important;
-                margin-bottom: 1.5rem !important;
-            }
-            .scroll-indicator {
-                bottom: 30px !important;
-                font-size: 1.2rem !important;
-            }
-
-            .section-title { font-size: 1.8rem; }
-
-            /* Sobre mí: Ajuste de foto y ventanas - CONTENIDO CENTRADO */
-            #sobre-mi { 
-                background-position: center 15% !important; 
-                background-attachment: scroll !important;
-            }
-            #sobre-mi::before {
-                background: linear-gradient(180deg, 
-                    rgba(15, 5, 25, 0.88) 0%, 
-                    rgba(15, 5, 25, 0.5) 25%, 
-                    rgba(15, 5, 25, 0.5) 75%, 
-                    rgba(15, 5, 25, 0.88) 100%);
-            }
-            .holo-scene {
-                display: flex; 
-                flex-direction: column; 
-                align-items: center; 
-                gap: 1.5rem;
-                background: rgba(15, 5, 25, 0.35); 
-                backdrop-filter: blur(3px); 
-                -webkit-backdrop-filter: blur(3px);
-                border: 1px solid rgba(177, 74, 255, 0.2); 
-                border-radius: 20px; 
-                padding: 2rem 1rem; 
-                min-height: auto;
-            }
-            .holo-center { 
-                position: relative; 
-                transform: none; 
-                animation: none; 
-                width: 100%; 
-                display: flex; 
-                flex-direction: column; 
-                align-items: center;
-                text-align: center;
-            }
-            .photo-frame { 
-                width: 180px; 
-                height: 180px; 
-                margin: 0 auto 1.5rem;
-            }
-            .holo-name { 
-                font-size: 1.15rem;
-                text-align: center;
-                padding: 0 10px;
-            }
-            .holo-tagline { 
-                font-size: 0.75rem; 
-                padding: 0 1rem;
-                text-align: center;
-            }
-            .holo-quote {
-                max-width: 100%;
-                padding: 0 10px;
-                text-align: center;
-            }
-            
-            .holo-window {
-                position: relative; 
-                width: 100%; 
-                max-width: 100%; 
-                animation: none; 
-                margin-bottom: 1rem;
-            }
-            .win-header { font-size: 0.7rem; padding: 0.5rem 0.6rem; }
-            .win-body { padding: 0.7rem 0.6rem; }
-            .stat-row { font-size: 0.65rem; }
-            .icon-grid { gap: 0.3rem; }
-            .icon-grid i { font-size: 1rem; }
-            .icon-grid span { font-size: 0.5rem; }
-            .mini-chart { height: 40px; }
-            .win-social a { width: 28px; height: 28px; }
-
-            /* Portafolio: 1 columna, sin desbordes */
-            .cases-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .case-header, .case-features, .case-links { padding-left: 1.3rem; padding-right: 1.3rem; }
-            .case-subtitle { padding: 0 1.3rem; }
-            .case-highlight { margin: 0.5rem 1.3rem 1.5rem; }
-
-            /* Negocio apilado */
-            .negocio-layout { gap: 2rem; }
-            .biz-window { flex: 1 1 auto; width: 100%; }
-            .biz-logo { font-size: 1.6rem; }
-            .business-btn { padding: 1rem 2rem; font-size: 1rem; }
-            .social-column { flex-direction: row; justify-content: center; width: 100%; }
-            .social-btn { width: 56px; height: 56px; font-size: 1.4rem; }
-
-            /* Navegación móvil */
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
             .nav-container {
-                position: fixed; 
-                top: 15px; 
-                right: 12px; 
-                bottom: auto; 
-                transform: none;
+                position: fixed;
+                bottom: 20px;
+                right: 50%;
+                transform: translateX(50%);
+                top: auto;
             }
-            .nav-button { flex-direction: column; gap: 10px; }
-            .nav-btn { width: 42px; height: 42px; }
-            .nav-btn i { font-size: 1rem; }
+            .nav-button { flex-direction: row; }
+            .nav-btn { width: 40px; height: 40px; }
             .nav-btn span { display: none; }
-
-            /* Footer y detalles */
-            .ascii-art { font-size: 0.55rem; }
-            footer { padding: 1.2rem 1rem 1rem; }
-            footer p { font-size: 0.62rem; color: #999; margin-bottom: 0.25rem; letter-spacing: 0.5px; }
+            #sobre-mi { background-attachment: scroll; }
         }
 
-        @media (max-width: 400px) {
-            .hero-title { font-size: 1.8rem; }
-            .hex-mini { width: 48px; height: 55px; }
-            .hex-mini i { font-size: 0.95rem; }
-            .hex-mini-row { gap: 0.6rem; }
-            .photo-frame { width: 160px; height: 160px; }
+        @media (max-height: 800px) {
+            .photo-frame { width: 180px; height: 180px; }
+            .holo-scene { min-height: 640px; }
+            #sobre-mi { padding: 50px 0; }
         }
+/* ===== NEGOCIO: LAYOUT 3 ZONAS ===== */
+.negocio-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.negocio-layout .biz-window {
+    flex: 0 1 480px;
+    margin: 0;
+}
+
+.negocio-msg {
+    flex: 0 1 300px;
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.social-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (max-width: 1000px) {
+    .negocio-layout {
+        flex-direction: column;
+    }
+    .social-column {
+        flex-direction: row;
+    }
+}
+/* ===== NEGOCIO: FONDO RED DE CONEXIONES ===== */
+#negocio {
+    overflow: hidden;
+}
+
+.network-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+/* Capa oscura para sincronizar el fondo con el resto del sitio */
+#negocio::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(15, 5, 25, 0.92) 0%,
+        rgba(15, 5, 25, 0.8) 50%,
+        rgba(15, 5, 25, 0.92) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+/* ===== MOBILE POLISH ✨ ===== */
+@media (max-width: 768px) {
+    /* Hero: foto sin estirar, centrada en tu cara */
+    .hero {
+        animation: none;
+        background-size: cover;
+        background-position: center 30%;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 9vw, 3.5rem);
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* Secciones con menos aire */
+    section { padding: 70px 0; }
+    .section-title { font-size: 1.8rem; }
+
+    /* Sobre mí: foto y ventanas a medida */
+    .photo-frame { width: 200px; height: 200px; }
+    .holo-name { font-size: 1.2rem; }
+    .holo-tagline { font-size: 0.75rem; padding: 0 1rem; }
+    .holo-window { max-width: 340px; }
+
+    /* Portafolio: 1 columna, cero desborde */
+    .cases-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .case-header,
+    .case-features,
+    .case-links { padding-left: 1.4rem; padding-right: 1.4rem; }
+    .case-subtitle { padding: 0 1.4rem; }
+    .case-highlight { margin-left: 1.4rem; margin-right: 1.4rem; }
+
+    /* Negocio apilado bonito */
+    .negocio-layout { gap: 2rem; }
+    .negocio-layout .biz-window { flex: 1 1 auto; width: 100%; }
+    .biz-logo { font-size: 1.6rem; }
+    .business-btn { padding: 1rem 2rem; font-size: 1rem; }
+    .social-btn { width: 56px; height: 56px; font-size: 1.4rem; }
+
+    /* ASCII art y footer */
+    .ascii-art { font-size: 0.6rem; }
+    footer { padding-bottom: 6rem; }
+}
+
+@media (max-width: 400px) {
+    .hero-title { font-size: 2rem; }
+    .hex-mini { width: 50px; height: 57px; }
+    .hex-mini i { font-size: 1rem; }
+}
+/* ===== MOBILE FIX v2 📱 ===== */
+html, body {
+    overflow-x: hidden;
+}
+
+img { max-width: 100%; }
+
+@media (max-width: 768px) {
+    /* Mata la banda morada: nada puede estirar la página */
+    html, body { overflow-x: clip; }
+    section { overflow-x: clip; }
+
+    /* Hero: foto nítida, sin estirar */
+    .hero {
+        animation: none;
+        background-size: cover;
+        background-position: center 30%;
+    }
+    .hero-title { font-size: clamp(2rem, 9vw, 3.2rem); letter-spacing: 2px; }
+    .hero-subtitle { font-size: 1rem; padding: 0 1rem; }
+
+    section { padding: 70px 0; }
+    .section-title { font-size: 1.7rem; }
+
+    /* La huella vuelve a brillar en móvil */
+    #sobre-mi { background-position: center 12%; }
+    #sobre-mi::before {
+        background: linear-gradient(180deg,
+            rgba(15, 5, 25, 0.88) 0%,
+            rgba(15, 5, 25, 0.5) 25%,
+            rgba(15, 5, 25, 0.5) 75%,
+            rgba(15, 5, 25, 0.88) 100%);
+    }
+
+    /* Sobre mí a medida */
+    .photo-frame { width: 190px; height: 190px; }
+    .holo-name { font-size: 1.15rem; }
+    .holo-tagline { font-size: 0.75rem; padding: 0 1rem; }
+    .holo-window { width: 100%; max-width: 100%; }
+
+    /* Portafolio: 1 columna, cero desborde */
+    .cases-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .case-header, .case-features, .case-links { padding-left: 1.3rem; padding-right: 1.3rem; }
+    .case-subtitle { padding: 0 1.3rem; }
+    .case-highlight { margin: 0.5rem 1.3rem 1.5rem; }
+
+    /* Negocio apilado */
+    .negocio-layout { flex-direction: column; gap: 2rem; }
+    .negocio-layout .biz-window { flex: 1 1 auto; width: 100%; }
+    .biz-logo { font-size: 1.5rem; }
+    .social-column { flex-direction: row; }
+    .social-btn { width: 54px; height: 54px; font-size: 1.3rem; }
+
+    .ascii-art { font-size: 0.55rem; }
+    footer { padding-bottom: 6rem; }
+}
+
+@media (max-width: 400px) {
+    .hero-title { font-size: 1.9rem; }
+    .hex-mini { width: 48px; height: 55px; }
+    .hex-mini i { font-size: 0.95rem; }
+    .hex-mini-row { gap: 0.6rem; }
+}
+/* ===== SOBRE MÍ: MODO COMPACTO MÓVIL 📱 ===== */
+@media (max-width: 768px) {
+    .holo-scene {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        background: rgba(15, 5, 25, 0.55);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(177, 74, 255, 0.35);
+        border-radius: 20px;
+        padding: 1.2rem 0.8rem;
+        box-shadow: 0 0 40px rgba(177, 74, 255, 0.2);
+        min-height: auto;
+    }
+
+    /* Tu perfil ocupa el ancho completo arriba */
+    .holo-center {
+        grid-column: 1 / -1;
+    }
+
+    .photo-frame { width: 160px; height: 160px; }
+    .holo-name { font-size: 1.05rem; }
+
+    /* Ventanitas en mini, sin flotar */
+    .holo-window {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        animation: none;
+    }
+
+    /* Texto compacto para que quepa bonito */
+    .win-header { font-size: 0.62rem; padding: 0.5rem 0.6rem; }
+    .win-body { padding: 0.7rem 0.6rem; }
+    .stat-row { font-size: 0.6rem; }
+    .icon-grid { gap: 0.3rem; }
+    .icon-grid i { font-size: 1rem; }
+    .icon-grid span { font-size: 0.5rem; }
+    .mini-chart { height: 40px; }
+    .win-social a { width: 28px; height: 28px; }
+}
+@media (max-width: 768px) {
+    .holo-scene {
+        /* Más aire arriba: el círculo completo queda dentro */
+        padding: 3.2rem 0.8rem 1.2rem;
+        /* Más transparente: la huella se ve sutil debajo */
+        background: rgba(15, 5, 25, 0.35);
+    }
+}
+/* ===== TÍTULOS CENTRADOS SIEMPRE (a prueba de animaciones) ===== */
+.section-title {
+    display: block;
+    width: 100%;
+    left: 0;
+    transform: none;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .holo-scene {
+        background: rgba(15, 5, 25, 0.25);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+    }
+}
+/* ===== BOTONERA MÓVIL: ARRIBA A LA DERECHA ===== */
+@media (max-width: 768px) {
+    .nav-container {
+        position: fixed;
+        top: 15px;
+        right: 12px;
+        bottom: auto;
+        transform: none;
+    }
+
+    .nav-button {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+    .nav-btn i { font-size: 1rem; }
+
+    /* El footer respira sin botones encima */
+    footer { padding-bottom: 3rem; }
+}
     </style>
 </head>
 <body>
@@ -1079,10 +1555,22 @@
     <!-- Navigation -->
     <div class="nav-container">
         <div class="nav-button">
-            <a href="#hero" class="nav-btn"><i class="fas fa-home"></i><span>Inicio</span></a>
-            <a href="#sobre-mi" class="nav-btn"><i class="fas fa-user"></i><span>Sobre Mí</span></a>
-            <a href="#portafolio" class="nav-btn"><i class="fas fa-briefcase"></i><span>Portafolio</span></a>
-            <a href="#negocio" class="nav-btn"><i class="fas fa-rocket"></i><span>Negocio</span></a>
+            <a href="#hero" class="nav-btn">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#sobre-mi" class="nav-btn">
+                <i class="fas fa-user"></i>
+                <span>Sobre Mí</span>
+            </a>
+            <a href="#portafolio" class="nav-btn">
+                <i class="fas fa-briefcase"></i>
+                <span>Portafolio</span>
+            </a>
+            <a href="#negocio" class="nav-btn">
+                <i class="fas fa-rocket"></i>
+                <span>Negocio</span>
+            </a>
         </div>
     </div>
 
@@ -1111,46 +1599,61 @@
                     </div>
                     <h3 class="holo-name">Leonela Rodríguez De Tapias</h3>
                     <p class="holo-tagline">Desarrolladora Frontend | UX/UI | Marketing Digital</p>
-                    <p class="holo-quote">Creo experiencias digitales modernas, funcionales y centradas en el usuario.</p>
+                    <p class="holo-quote">"Creo experiencias digitales modernas, funcionales y centradas en el usuario."</p>
                     <p class="mini-label">Mis Intereses</p>
-                   <div class="hex-mini-row">
+                    <div class="hex-mini-row">
                         <div class="hex-mini-wrap" data-tip="Viajar">
-                            <i class="fas fa-hand-pointer tap-hand"></i>
-                            <div class="hex-mini" data-modal="modal-viajar"><div class="hex-mini-inner"><i class="fas fa-umbrella-beach"></i></div></div>
+                            <div class="hex-mini" data-modal="modal-viajar">
+                                <div class="hex-mini-inner"><i class="fas fa-umbrella-beach"></i></div>
+                            </div>
                         </div>
                         <div class="hex-mini-wrap" data-tip="Arte">
-                            <i class="fas fa-hand-pointer tap-hand"></i>
-                            <div class="hex-mini" data-modal="modal-arte"><div class="hex-mini-inner"><i class="fas fa-palette"></i></div></div>
+                            <div class="hex-mini" data-modal="modal-arte">
+                                <div class="hex-mini-inner"><i class="fas fa-palette"></i></div>
+                            </div>
                         </div>
                         <div class="hex-mini-wrap" data-tip="Patinar">
-                            <i class="fas fa-hand-pointer tap-hand"></i>
-                            <div class="hex-mini" data-modal="modal-patinar"><div class="hex-mini-inner"><i class="fas fa-person-skating"></i></div></div>
+                            <div class="hex-mini" data-modal="modal-patinar">
+                                <div class="hex-mini-inner"><i class="fas fa-person-skating"></i></div>
+                            </div>
                         </div>
                         <div class="hex-mini-wrap" data-tip="Gratitud">
-                            <i class="fas fa-hand-pointer tap-hand"></i>
-                            <div class="hex-mini" data-modal="modal-gratitud"><div class="hex-mini-inner"><i class="fas fa-spa"></i></div></div>
+                            <div class="hex-mini" data-modal="modal-gratitud">
+                                <div class="hex-mini-inner"><i class="fas fa-spa"></i></div>
+                            </div>
                         </div>
                         <div class="hex-mini-wrap" data-tip="Lectura">
-                            <i class="fas fa-hand-pointer tap-hand"></i>
-                            <div class="hex-mini" data-modal="modal-lectura"><div class="hex-mini-inner"><i class="fas fa-book-open"></i></div></div>
+                            <div class="hex-mini" data-modal="modal-lectura">
+                                <div class="hex-mini-inner"><i class="fas fa-book-open"></i></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- VENTANA 1: FRONTEND -->
                 <div class="holo-window win-1">
-                    <div class="win-header"><i class="fas fa-code"></i> Frontend<div class="win-dots"><i></i><i></i><i></i></div></div>
+                    <div class="win-header">
+                        <i class="fas fa-code"></i> Frontend
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
                     <div class="win-body">
-                        <div class="stat-row"><span><i class="fab fa-html5"></i> HTML5</span><span>85%</span></div><div class="mini-bar"><div style="width:85%"></div></div>
-                        <div class="stat-row"><span><i class="fab fa-css3-alt"></i> CSS3</span><span>80%</span></div><div class="mini-bar"><div style="width:80%"></div></div>
-                        <div class="stat-row"><span><i class="fab fa-js"></i> JavaScript</span><span>70%</span></div><div class="mini-bar"><div style="width:70%"></div></div>
-                        <div class="stat-row"><span>📱 Responsive</span><span>90%</span></div><div class="mini-bar"><div style="width:90%"></div></div>
+                        <div class="stat-row"><span><i class="fab fa-html5"></i> HTML5</span><span>85%</span></div>
+                        <div class="mini-bar"><div style="width:85%"></div></div>
+                        <div class="stat-row"><span><i class="fab fa-css3-alt"></i> CSS3</span><span>80%</span></div>
+                        <div class="mini-bar"><div style="width:80%"></div></div>
+                        <div class="stat-row"><span><i class="fab fa-js"></i> JavaScript</span><span>70%</span></div>
+                        <div class="mini-bar"><div style="width:70%"></div></div>
+                        <div class="stat-row"><span>📱 Responsive</span><span>90%</span></div>
+                        <div class="mini-bar"><div style="width:90%"></div></div>
                     </div>
                 </div>
 
                 <!-- VENTANA 2: UX/UI -->
                 <div class="holo-window win-2">
-                    <div class="win-header"><i class="fas fa-pen-nib"></i> UX / UI<div class="win-dots"><i></i><i></i><i></i></div></div>
+                    <div class="win-header">
+                        <i class="fas fa-pen-nib"></i> UX / UI
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
                     <div class="win-body">
                         <div class="icon-grid">
                             <div><i class="fas fa-mobile-alt"></i><span>Mobile First</span></div>
@@ -1162,26 +1665,40 @@
 
                 <!-- VENTANA 3: MARKETING -->
                 <div class="holo-window win-3">
-                    <div class="win-header"><i class="fas fa-chart-line"></i> Marketing<div class="win-dots"><i></i><i></i><i></i></div></div>
+                    <div class="win-header">
+                        <i class="fas fa-chart-line"></i> Marketing
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
                     <div class="win-body">
-                        <div class="mini-chart"><i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:85%"></i><i style="height:100%"></i></div>
+                        <div class="mini-chart">
+                            <i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:85%"></i><i style="height:100%"></i>
+                        </div>
                         <div class="stat-row"><span>@tapiasmarketing</span><span style="color:var(--neon-purple)">📈</span></div>
                     </div>
                 </div>
 
                 <!-- VENTANA 4: SOFT SKILLS -->
                 <div class="holo-window win-4">
-                    <div class="win-header"><i class="fas fa-brain"></i> Skills<div class="win-dots"><i></i><i></i><i></i></div></div>
+                    <div class="win-header">
+                        <i class="fas fa-brain"></i> Skills
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
                     <div class="win-body">
-                        <div class="stat-row"><span>💬 Comunicación</span><span>95%</span></div><div class="mini-bar"><div style="width:95%"></div></div>
-                        <div class="stat-row"><span>💡 Creatividad</span><span>90%</span></div><div class="mini-bar"><div style="width:90%"></div></div>
-                        <div class="stat-row"><span>🎯 Dedicación</span><span>100%</span></div><div class="mini-bar"><div style="width:100%"></div></div>
+                        <div class="stat-row"><span>💬 Comunicación</span><span>95%</span></div>
+                        <div class="mini-bar"><div style="width:95%"></div></div>
+                        <div class="stat-row"><span>💡 Creatividad</span><span>90%</span></div>
+                        <div class="mini-bar"><div style="width:90%"></div></div>
+                        <div class="stat-row"><span>🎯 Dedicación</span><span>100%</span></div>
+                        <div class="mini-bar"><div style="width:100%"></div></div>
                     </div>
                 </div>
 
                 <!-- VENTANA 5: CONTACTO -->
                 <div class="holo-window win-5">
-                    <div class="win-header"><i class="fas fa-map-marker-alt"></i> Contacto<div class="win-dots"><i></i><i></i><i></i></div></div>
+                    <div class="win-header">
+                        <i class="fas fa-map-marker-alt"></i> Contacto
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
                     <div class="win-body">
                         <div class="stat-row"><span>📍 Mérida, Venezuela</span></div>
                         <div class="status-badge"><span class="status-dot"></span> Disponible para proyectos</div>
@@ -1195,10 +1712,15 @@
 
                 <!-- VENTANA 6: MI FUERTE -->
                 <div class="holo-window win-6">
-                    <div class="win-header"><i class="fas fa-bolt"></i> Mi Fuerte<div class="win-dots"><i></i><i></i><i></i></div></div>
+                    <div class="win-header">
+                        <i class="fas fa-bolt"></i> Mi Fuerte
+                        <div class="win-dots"><i></i><i></i><i></i></div>
+                    </div>
                     <div class="win-body">
-                        <div class="stat-row"><span><i class="fas fa-robot"></i> Automatizaciones</span><span>90%</span></div><div class="mini-bar"><div style="width:90%"></div></div>
-                        <div class="stat-row"><span><i class="fab fa-meta"></i> Meta Business</span><span>95%</span></div><div class="mini-bar"><div style="width:95%"></div></div>
+                        <div class="stat-row"><span><i class="fas fa-robot"></i> Automatizaciones</span><span>90%</span></div>
+                        <div class="mini-bar"><div style="width:90%"></div></div>
+                        <div class="stat-row"><span><i class="fab fa-meta"></i> Meta Business</span><span>95%</span></div>
+                        <div class="mini-bar"><div style="width:95%"></div></div>
                     </div>
                 </div>
             </div>
@@ -1208,30 +1730,39 @@
     <!-- Portfolio Section -->
     <section id="portafolio">
         <div class="circuit-bg">
-            <span class="pulse p1"></span><span class="pulse p2"></span><span class="pulse p3"></span><span class="pulse p4"></span>
-            <span class="pulse vertical p5"></span><span class="pulse vertical p6"></span>
+            <span class="pulse p1"></span>
+            <span class="pulse p2"></span>
+            <span class="pulse p3"></span>
+            <span class="pulse p4"></span>
+            <span class="pulse vertical p5"></span>
+            <span class="pulse vertical p6"></span>
         </div>
         <div class="container">
             <h2 class="section-title fade-in">PORTAFOLIO</h2>
             <div class="cases-grid">
+
                 <!-- Proyecto: LES KOMBI -->
                 <div class="case-card fade-in">
                     <div class="case-header">
                         <span class="case-badge">Proyecto actual · Música</span>
                         <h3 class="case-title">Les Kombi 🚐</h3>
-                        <p class="case-quote">Súbete a la Kombi Sonora</p>
+                        <p class="case-quote">"Súbete a la Kombi Sonora"</p>
                     </div>
+
                     <p class="case-subtitle"><i class="fas fa-bolt"></i> MI COLABORACIÓN</p>
+
                     <ul class="case-features">
                         <li><i class="fas fa-check-circle"></i> <span><strong>Automatizaciones en la landing y Web:</strong> captura de leads para campañas con sistema automático de mensajería</span></li>
                         <li><i class="fas fa-check-circle"></i> <span><strong>Sistema Meta Business:</strong> activación para campañas estratégicas</span></li>
                         <li><i class="fas fa-check-circle"></i> <span><strong>Meta Pixel:</strong> monitoreo de clicks desde YouTube, Spotify y Apple Music</span></li>
                         <li><i class="fas fa-check-circle"></i> <span><strong>Automatización de correos de bienvenida:</strong> plantillas HTML personalizadas enviadas en tiempo real tras la captura de cada lead</span></li>
                     </ul>
+
                     <div class="case-highlight">
                         🏆 LES KOMBI: <strong>"Bailar de La'O"</strong> — Postulado a los Latin Grammy 2026<br>
                         🌍 Gira 2026-2027: Colombia, Ecuador, Venezuela, México y Europa
                     </div>
+
                     <div class="case-links">
                         <a href="https://tapiasmarketing.com/" target="_blank" class="project-link">Ver caso ↗</a>
                         <a href="https://www.instagram.com/les.kombi/" target="_blank" class="project-link"><i class="fab fa-instagram"></i> Su música</a>
@@ -1242,10 +1773,12 @@
                 <div class="case-card fade-in">
                     <div class="case-header">
                         <span class="case-badge">Proyecto actual · Trading & Productos Digitales</span>
-                        <h3 class="case-title">Smart Trading Systems </h3>
-                        <p class="case-quote">Herramientas profesionales para automatizar tu trading</p>
+                        <h3 class="case-title">Smart Trading Systems 📊</h3>
+                        <p class="case-quote">"Herramientas profesionales para automatizar tu trading"</p>
                     </div>
+
                     <p class="case-subtitle"><i class="fas fa-bolt"></i> MI COLABORACIÓN</p>
+
                     <ul class="case-features">
                         <li><i class="fas fa-check-circle"></i> <span><strong>Sistema de referidos:</strong> automatización en landing page con mensajería x2 y base de datos automático</span></li>
                         <li><i class="fas fa-check-circle"></i> <span><strong>BOT de campañas por Telegram:</strong> asistente que envía mensajes HTML personalizados para entregar herramientas de trading, promociones, bienvenidas y noticias</span></li>
@@ -1253,55 +1786,84 @@
                         <li><i class="fas fa-check-circle"></i> <span><strong>Campañas en Meta Business:</strong> segmentación dirigida a público estratégico con intención de compra</span></li>
                         <li><i class="fas fa-check-circle"></i> <span><strong>Creación de contenido:</strong> edición de video y contenido para Instagram, YouTube y Skool</span></li>
                     </ul>
+
                     <div class="case-highlight">
                         🤖 SMART TRADING SYSTEMS: <strong>Indicadores Profesionales de trading</strong><br>
                         Diseñados para precisión, velocidad y confianza en cada trade.
                     </div>
+
                     <div class="case-links">
                         <a href="https://smarttradingsystems.net/" target="_blank" class="project-link">Ver web en vivo ↗</a>
                         <a href="https://tapiasmarketing.com/" target="_blank" class="project-link">Ver caso ↗</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Business Section -->
-    <section id="negocio">
-        <canvas id="networkCanvas" class="network-canvas"></canvas>
-        <div class="container">
-            <h2 class="section-title fade-in">NUESTRO NEGOCIO</h2>
-            <div class="negocio-layout fade-in">
-                <!-- IZQUIERDA: VENTANA TAPIAS MARKETING -->
-                <div class="biz-window">
-                    <div class="biz-header"><i class="fas fa-rocket"></i> SYSTEM ONLINE<div class="win-dots"><i></i><i></i><i></i></div></div>
-                    <div class="biz-body">
-                        <h3 class="biz-logo">TAPIAS MARKETING</h3>
-                        <div class="biz-team">👩‍💻 Leonela & Erick · Equipo 💜</div>
-                        <p class="biz-desc">Transformando mentalidades, multiplicando ingresos. Creamos webs, tiendas online, automatizaciones y campañas estratégicas para que tu negocio venda 24/7.</p>
-                        <div class="biz-tags">
-                            <span>Webs & Landing</span><span>Automatizaciones</span><span>Meta Business</span><span>Tiendas Online</span><span>Email Marketing</span>
-                        </div>
-                        <a href="https://tapiasmarketing.com/" target="_blank" class="business-btn"><i class="fas fa-globe"></i> Visita nuestra web</a>
-                    </div>
+  <!-- Business Section -->
+<section id="negocio">
+    <canvas id="networkCanvas" class="network-canvas"></canvas>
+    <div class="container">
+        <h2 class="section-title fade-in">NUESTRO NEGOCIO</h2>
+
+        <div class="negocio-layout fade-in">
+
+            <!-- IZQUIERDA: VENTANA TAPIAS MARKETING -->
+            <div class="biz-window">
+                <div class="biz-header">
+                    <i class="fas fa-rocket"></i> SYSTEM ONLINE
+                    <div class="win-dots"><i></i><i></i><i></i></div>
                 </div>
-                <!-- CENTRO: MENSAJE -->
-                <p class="negocio-msg">¿Quieres llevar tu marca al siguiente nivel? En Tapias Marketing convertimos tus ideas en contenido que conecta, destaca y vende.</p>
-                <!-- DERECHA: BOTONES EN COLUMNA -->
-                <div class="social-column">
-                    <a href="https://github.com/Leonelarodri" class="social-btn" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/leonelatapias/" class="social-btn" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/tapiasmarketing/" class="social-btn" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:leonela.tapias@gmail.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <div class="biz-body">
+                    <h3 class="biz-logo">TAPIAS MARKETING</h3>
+                    <div class="biz-team">👩‍💻 Leonela & Erick · Equipo 💜</div>
+                    <p class="biz-desc">Transformando mentalidades, multiplicando ingresos. Creamos webs, tiendas online, automatizaciones y campañas estratégicas para que tu negocio venda 24/7.</p>
+                    <div class="biz-tags">
+                        <span>Webs & Landing</span>
+                        <span>Automatizaciones</span>
+                        <span>Meta Business</span>
+                        <span>Tiendas Online</span>
+                        <span>Email Marketing</span>
+                    </div>
+                    <a href="https://tapiasmarketing.com/" target="_blank" class="business-btn">
+                        <i class="fas fa-globe"></i> Visita nuestra web
+                    </a>
                 </div>
             </div>
+
+            <!-- CENTRO: MENSAJE -->
+            <p class="negocio-msg">¿Quieres llevar tu marca al siguiente nivel? En Tapias Marketing convertimos tus ideas en contenido que conecta, destaca y vende.</p>
+
+            <!-- DERECHA: BOTONES EN COLUMNA -->
+            <div class="social-column">
+                <a href="https://github.com/Leonelarodri" class="social-btn" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/leonelatapias/" class="social-btn" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/tapiasmarketing/" class="social-btn" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:leonela.tapias@gmail.com" class="social-btn" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Modals -->
     <div class="holo-modal" id="modal-viajar">
         <div class="modal-content">
-            <div class="modal-header"><i class="fas fa-umbrella-beach"></i><h3>VIAJAR</h3><button class="modal-close">&times;</button></div>
+            <div class="modal-header">
+                <i class="fas fa-umbrella-beach"></i>
+                <h3>VIAJAR</h3>
+                <button class="modal-close">&times;</button>
+            </div>
             <div class="modal-body">
                 <p>Explorar las costas de Venezuela Junto a mi esposo y nuestra kombi La Bonita es mi forma de reconectar con la naturaleza, cada ruta me enseña a disfrutar el proceso y me devuelve con la creatividad y la perspectiva fresca que aplico en mi trabajo.</p>
 <pre class="ascii-art">
@@ -1321,6 +1883,7 @@
        |__// \______// \__|      /|\
        '--'\_/------'\_/'--'    / | \
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
       → La Bonita: próxima parada... 🚐💨
 </pre>
             </div>
@@ -1329,26 +1892,37 @@
 
     <div class="holo-modal" id="modal-arte">
         <div class="modal-content">
-            <div class="modal-header"><i class="fas fa-palette"></i><h3>ARTE</h3><button class="modal-close">&times;</button></div>
+            <div class="modal-header">
+                <i class="fas fa-palette"></i>
+                <h3>ARTE</h3>
+                <button class="modal-close">&times;</button>
+            </div>
             <div class="modal-body">
-                <p>Crear arte es mi estado de flow, en @icoostudioart, transformo materiales industriales en piezas con alma, me encanta crear diseños de Volkswagen personalizados y únicos, es ese espacio donde desconecto de lo cotidiano y regreso con ideas nuevas para diseñar experiencias digitales.</p>
+                <p>Crear arte es mi estado de flow, en @icoostudioart, transformo materiales industriales en piezas con alma, es ese espacio donde desconecto de lo cotidiano y regreso con ideas nuevas para diseñar experiencias digitales.</p>
 <pre class="ascii-art">
-                         ____________________ 
-       .-***--.         / = |    |   / |  | \  .
-      /       _ \ .     |  = |____|  /__|__|  \|
-   /_| |..|  |_..\|_    |         |            |
-  ( _              _)   |    _    |       _    |
- =`-(_)--------(_)-'    `---(_)----------(_)--' 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 .-.-.
+                 '. .'
+                   '
+      ______             ______
+     /|_||_\`.__        /|_||_\`.__
+    (   _    _ _\      (   _    _ _\
+    =`-(_)--(_)-'      =`-(_)--(_)-' 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 </pre>
-                <a href="https://www.instagram.com/icoostudioart/" target="_blank" class="modal-insta"><i class="fab fa-instagram"></i> @icoostudioart</a>
+                <a href="https://www.instagram.com/icoostudioart/" target="_blank" class="modal-insta">
+                    <i class="fab fa-instagram"></i> @icoostudioart
+                </a>
             </div>
         </div>
     </div>
 
     <div class="holo-modal" id="modal-patinar">
         <div class="modal-content">
-            <div class="modal-header"><i class="fas fa-person-skating"></i><h3>PATINAR</h3><button class="modal-close">&times;</button></div>
+            <div class="modal-header">
+                <i class="fas fa-person-skating"></i>
+                <h3>PATINAR</h3>
+                <button class="modal-close">&times;</button>
+            </div>
             <div class="modal-body">
                 <p>Lo que empezó como una forma de compartir el hobby de mi esposo se convirtió en una pasión propia. Patinar me enseñó que el crecimiento sucede fuera de la zona de confort: equilibrio, paciencia y alegría por avanzar paso a paso. Porque en los patines, como en cada proyecto, lo importante es levantarse cada vez que se cae.</p>
 <pre class="ascii-art">
@@ -1369,7 +1943,11 @@
 
     <div class="holo-modal" id="modal-gratitud">
         <div class="modal-content">
-            <div class="modal-header"><i class="fas fa-spa"></i><h3>GRATITUD</h3><button class="modal-close">&times;</button></div>
+            <div class="modal-header">
+                <i class="fas fa-spa"></i>
+                <h3>GRATITUD</h3>
+                <button class="modal-close">&times;</button>
+            </div>
             <div class="modal-body">
                 <p>Practicar gratitud a diario fue el spark que encendió mi mente y me llevó a dedicarme a lo que realmente amo. Agradecer mi presente y visualizar el futuro que quiero vivir me dio claridad y propósito. Esa mentalidad es la que llevo a cada proyecto: enfoque, gratitud y visión de abundancia.</p>
 <pre class="ascii-art">
@@ -1385,23 +1963,29 @@
 
     <div class="holo-modal" id="modal-lectura">
         <div class="modal-content">
-            <div class="modal-header"><i class="fas fa-book-open"></i><h3>LECTURA</h3><button class="modal-close">&times;</button></div>
+            <div class="modal-header">
+                <i class="fas fa-book-open"></i>
+                <h3>LECTURA</h3>
+                <button class="modal-close">&times;</button>
+            </div>
             <div class="modal-body">
                 <p>Leer se ha convertido en una pasión que transformó mi vida. A través de los libros amplié mi mundo, me reconecté conmigo misma y aprendí a observar primero el porqué de mis emociones para comprender mis acciones. Hoy la lectura es mi espacio de autoconocimiento y crecimiento constante.</p>
-                <p style="margin-top: 1rem; color: var(--glow-purple); font-size: 0.85rem;">📖 <strong>Autores que me inspiran:</strong> Marian Rojas Estapé, Mario Alonso Puig y Tony Robbins.</p>
+                <p style="margin-top: 1rem; color: var(--glow-purple); font-size: 0.85rem;">
+                    📖 <strong>Autores que me inspiran:</strong> Marian Rojas Estapé, Mario Alonso Puig y Tony Robbins.
+                </p>
 <pre class="ascii-art">
-  _______________________    ______________________
--/|                       \/                       |\-
-|||  La magia de leer     || --------------------  |||
-|||  -------------------- || --------------------  |||
-|||  .................... || ....................  |||
-|||  .................... || ....................  |||
-|||  .................... || ....................  |||
-|||  .................... || ya no puedes volver   |||
-|||  .................... || ...a ser quien eras.  |||
-|||_______________________||_______________________|||
-|/========================\/========================\|
----------------------------~-~-----------------------'
+ _________________________   ___________________________
+-/|                         \/                         |\-
+|||  La magia de leer       ||  --------------------   |||
+|||  --------------------   ||  --------------------   |||
+|||  ....................   ||  ....................   |||
+|||  ....................   ||  ....................   |||
+|||  ....................   ||  ....................   |||
+|||  ....................   ||  ya no puedes volver    |||
+|||  ....................   ||  ...a ser quien eras.   |||
+|||_________________________||_________________________|||
+|/==========================\/==========================\|
+----------------------------~--~-------------------------'
 </pre>
             </div>
         </div>
@@ -1446,7 +2030,10 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
@@ -1456,33 +2043,48 @@
             const canvas = document.getElementById('matrixCanvas');
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
+
             function resizeCanvas() {
                 const hero = document.querySelector('.hero');
                 canvas.width = hero.offsetWidth;
                 canvas.height = hero.offsetHeight;
             }
+
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
+
             const fontSize = 16;
             const columns = canvas.width / fontSize;
             const drops = [];
-            for (let i = 0; i < columns; i++) { drops[i] = Math.random() * -100; }
+
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.random() * -100;
+            }
+
             const chars = '01010101010101010101010101010101010101';
+
             function drawMatrix() {
                 ctx.fillStyle = 'rgba(15, 5, 25, 0.08)';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 ctx.fillStyle = '#b14aff';
                 ctx.font = fontSize + 'px monospace';
+
                 for (let i = 0; i < drops.length; i++) {
                     const char = chars[Math.floor(Math.random() * chars.length)];
                     const x = i * fontSize;
                     const y = drops[i] * fontSize;
-                    ctx.shadowBlur = 15; ctx.shadowColor = '#b14aff';
-                    ctx.fillText(char, x, y); ctx.shadowBlur = 0;
-                    if (y > canvas.height && Math.random() > 0.975) { drops[i] = 0; }
+                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = '#b14aff';
+                    ctx.fillText(char, x, y);
+                    ctx.shadowBlur = 0;
+
+                    if (y > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
                     drops[i]++;
                 }
             }
+
             setInterval(drawMatrix, 50);
         }
 
@@ -1493,84 +2095,96 @@
                 if (modal) modal.classList.add('active');
             });
         });
+
         document.querySelectorAll('.modal-close').forEach(btn => {
-            btn.addEventListener('click', () => { btn.closest('.holo-modal').classList.remove('active'); });
-        });
-        document.querySelectorAll('.holo-modal').forEach(modal => {
-            modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
-        });
-
-        // Network Connections Effect
-        function initNetwork() {
-            const canvas = document.getElementById('networkCanvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            const section = document.getElementById('negocio');
-            function resize() { canvas.width = section.offsetWidth; canvas.height = section.offsetHeight; }
-            resize(); window.addEventListener('resize', resize);
-            const nodes = []; const count = 45;
-            for (let i = 0; i < count; i++) {
-                nodes.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, vx: (Math.random() - 0.5) * 0.6, vy: (Math.random() - 0.5) * 0.6, r: Math.random() * 2 + 1 });
-            }
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                for (const n of nodes) {
-                    n.x += n.vx; n.y += n.vy;
-                    if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
-                    if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
-                }
-                for (let i = 0; i < nodes.length; i++) {
-                    for (let j = i + 1; j < nodes.length; j++) {
-                        const dx = nodes[i].x - nodes[j].x; const dy = nodes[i].y - nodes[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < 140) {
-                            ctx.strokeStyle = 'rgba(177, 74, 255,' + (1 - dist / 140) * 0.5 + ')';
-                            ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y); ctx.stroke();
-                        }
-                    }
-                }
-                for (const n of nodes) {
-                    ctx.fillStyle = 'rgba(216, 180, 254, 0.8)'; ctx.shadowBlur = 8; ctx.shadowColor = '#2c0847';
-                    ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
-                }
-                requestAnimationFrame(draw);
-            }
-            draw();
-        }
-
-        // Counters Effect
-        function initCounters() {
-            const scene = document.querySelector('.holo-scene');
-            if (!scene) return;
-            const items = [];
-            scene.querySelectorAll('.stat-row span:last-child').forEach(el => {
-                const m = el.textContent.match(/(\d+)\s*%/);
-                if (m) items.push({ el, target: +m[1] });
+            btn.addEventListener('click', () => {
+                btn.closest('.holo-modal').classList.remove('active');
             });
-            if (!items.length) return;
-            let started = false; const DURATION = 2500;
-            function start() {
-                if (started) return; started = true; const t0 = performance.now(); let last = 0;
-                function tick(now) {
-                    const p = Math.min((now - t0) / DURATION, 1);
-                    if (now - last > 60 || p === 1) {
-                        last = now;
-                        items.forEach(it => { it.el.textContent = p === 1 ? it.target + '%' : Math.floor(Math.random() * 100) + '%'; });
-                    }
-                    if (p < 1) requestAnimationFrame(tick);
-                }
-                requestAnimationFrame(tick);
-            }
-            const obs = new IntersectionObserver(es => {
-                es.forEach(e => { if (e.isIntersecting) { start(); obs.disconnect(); } });
-            }, { threshold: 0.25 });
-            obs.observe(scene);
+        });
+
+        document.querySelectorAll('.holo-modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.remove('active');
+            });
+        });
+	// Network Connections Effect
+function initNetwork() {
+    const canvas = document.getElementById('networkCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const section = document.getElementById('negocio');
+
+    function resize() {
+        canvas.width = section.offsetWidth;
+        canvas.height = section.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const nodes = [];
+    const count = 45;
+
+    for (let i = 0; i < count; i++) {
+        nodes.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6,
+            r: Math.random() * 2 + 1
+        });
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Mover nodos
+        for (const n of nodes) {
+            n.x += n.vx;
+            n.y += n.vy;
+            if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+            if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
         }
 
+        // Líneas de conexión
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                const dx = nodes[i].x - nodes[j].x;
+                const dy = nodes[i].y - nodes[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 140) {
+                    ctx.strokeStyle = 'rgba(177, 74, 255,' + (1 - dist / 140) * 0.5 + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(nodes[i].x, nodes[i].y);
+                    ctx.lineTo(nodes[j].x, nodes[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Nodos brillantes
+        for (const n of nodes) {
+            ctx.fillStyle = 'rgba(216, 180, 254, 0.8)';
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = '#2c0847';
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        }
+
+        requestAnimationFrame(draw);
+    }
+    draw();
+}
         // Initialize
         window.addEventListener('load', () => {
-            createParticles(); handleScroll(); initMatrix(); initNetwork(); initCounters();
+            createParticles();
+            handleScroll();
+            initMatrix();
+	    initNetwork();
         });
+
         window.addEventListener('scroll', handleScroll);
     </script>
 </body>
